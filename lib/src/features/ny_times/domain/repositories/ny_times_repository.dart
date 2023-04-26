@@ -5,5 +5,5 @@ import 'package:dartz/dartz.dart';
 
 abstract class NyTimesRepository {
   // Gent Ny Times Articles
-  Future<Either<Failure, NyTimesModel>> getNyTimesData(NyTimesParams params);
+  Future<Either<Failure, List<NyTimesModel>>> getNyTimesData(NyTimesParams params);
 }

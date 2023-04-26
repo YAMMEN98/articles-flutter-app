@@ -10,13 +10,13 @@ import 'package:dio/dio.dart';
 
 class NyTimesApi {
   /// NyTimes method
-  Future<Either<Failure, NyTimesModel>> getNyTimesData(
+  Future<Either<Failure, List<NyTimesModel>>> getNyTimesData(
       NyTimesParams params) async {
     try {
       final result = (await DioNetwork.appAPI.get(
         getNyTimeArticle(params.period),
       )).data;
-      return Right(NyTimesModel.fromJson(result['results']));
+      return Right(NyTimesModel.fromJsonList(result['results']));
     } on DioError catch (e) {
       throw ServerException(handleDioError(e), e.response?.statusCode);
     } catch (e) {

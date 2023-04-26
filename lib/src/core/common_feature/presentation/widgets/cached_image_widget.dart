@@ -20,31 +20,34 @@ class CachedImageWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        decoration: radius == null
-            ? null
-            : BoxDecoration(
-                // image: DecorationImage(image: NetworkImage(appAdvert.imageUrl)),
-                borderRadius: BorderRadius.all(Radius.circular(radius ?? 0))),
-        height: height,
-        width: width,
-        child: imageUrl != null && imageUrl != ""
-            ? CachedNetworkImage(
-                key: _backgroundImageKey,
-                imageUrl: imageUrl ?? "",
-                height: height,
-                width: width,
-                fit: BoxFit.cover,
-                errorWidget: (context, url, error) => Image.asset(
-                  Helper.getImagePath("no_image.jpg"),
-                  fit: BoxFit.fill,
-                ),
-              )
-            : Image.asset(
-                'assets/images/no_records.png',
-                height: height,
-                width: width,
-                fit: BoxFit.contain,
-              ));
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(radius??0),
+      child: Container(
+          decoration: radius == null
+              ? null
+              : BoxDecoration(
+                  // image: DecorationImage(image: NetworkImage(appAdvert.imageUrl)),
+                  borderRadius: BorderRadius.all(Radius.circular(radius ?? 0))),
+          height: height,
+          width: width,
+          child: imageUrl != null && imageUrl != ""
+              ? CachedNetworkImage(
+                  key: _backgroundImageKey,
+                  imageUrl: imageUrl ?? "",
+                  height: height,
+                  width: width,
+                  fit: BoxFit.cover,
+                  errorWidget: (context, url, error) => Image.asset(
+                    Helper.getImagePath("no_image.jpg"),
+                    fit: BoxFit.fill,
+                  ),
+                )
+              : Image.asset(
+                  'assets/images/no_records.png',
+                  height: height,
+                  width: width,
+                  fit: BoxFit.contain,
+                )),
+    );
   }
 }

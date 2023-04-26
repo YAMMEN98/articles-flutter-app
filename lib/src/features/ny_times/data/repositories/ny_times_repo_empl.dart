@@ -15,7 +15,7 @@ class NyTimesRepositoryImpl extends NyTimesRepository {
 
   // Gent Ny Times Articles
   @override
-  Future<Either<Failure, NyTimesModel>> getNyTimesData(NyTimesParams params) async {
+  Future<Either<Failure, List<NyTimesModel>>> getNyTimesData(NyTimesParams params) async {
     try {
       final result = await nyTimesApi.getNyTimesData(params);
       return result.fold((l) {

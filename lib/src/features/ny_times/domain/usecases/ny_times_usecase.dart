@@ -4,13 +4,13 @@ import 'package:ny_times_app/src/features/ny_times/data/entities/ny_times_model.
 import 'package:ny_times_app/src/features/ny_times/domain/repositories/ny_times_repository.dart';
 import 'package:dartz/dartz.dart';
 
-class NyTimesUseCase extends UseCase<NyTimesModel, NyTimesParams> {
+class NyTimesUseCase extends UseCase<List<NyTimesModel>, NyTimesParams> {
   final NyTimesRepository repository;
 
 NyTimesUseCase(this.repository);
 
   @override
-  Future<Either<Failure, NyTimesModel>> call(NyTimesParams params) async {
+  Future<Either<Failure, List<NyTimesModel>>> call(NyTimesParams params) async {
     final result = await repository.getNyTimesData(params);
     return result.fold((l) {
       return Left(l);

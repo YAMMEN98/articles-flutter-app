@@ -1,16 +1,40 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:ny_times_app/src/core/common_feature/presentation/widgets/cached_image_widget.dart';
 import 'package:ny_times_app/src/core/styles/app_colors.dart';
+import 'package:ny_times_app/src/core/util/constant/app_constants.dart';
 import 'package:ny_times_app/src/core/util/helper.dart';
+import 'package:ny_times_app/src/features/ny_times/data/entities/ny_times_model.dart';
 
 class ArticleCardWidget extends StatefulWidget {
-  const ArticleCardWidget({Key? key}) : super(key: key);
+  final NyTimesModel nyTimesModel;
+
+  const ArticleCardWidget({Key? key, required this.nyTimesModel})
+      : super(key: key);
 
   @override
   State<ArticleCardWidget> createState() => _ArticleCardWidgetState();
 }
 
 class _ArticleCardWidgetState extends State<ArticleCardWidget> {
+  String? imageUrl;
+
+  @override
+  void initState() {
+    // Check if somethings happened and do not return media
+    // If everything seems to be in order we will display the image
+    // else display solid circle instead
+    if (widget.nyTimesModel.media != null &&
+        widget.nyTimesModel.media!.isNotEmpty) {
+      if (widget.nyTimesModel.media!.first.mediaMetadata != null &&
+          widget.nyTimesModel.media!.first.mediaMetadata!.isNotEmpty) {
+        imageUrl = widget.nyTimesModel.media!.first.mediaMetadata!.first.url;
+      }
+    }
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -19,9 +43,22 @@ class _ArticleCardWidgetState extends State<ArticleCardWidget> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           // Circle Avatar
-          CircleAvatar(
-            backgroundColor: AppColors.gray,
-          ),
+          if(imageUrl!=null)...{
+            CachedImageWidget(
+              imageUrl: imageUrl!,
+              radius: 50,
+              width: 50.w,
+            ),
+          }else...{
+            SizedBox(
+              width: 50.w,
+              child: CircleAvatar(
+                backgroundColor: AppColors.gray,
+                radius: 40,
+              ),
+            )
+          },
+
 
           // Space
           SizedBox(
@@ -34,7 +71,7 @@ class _ArticleCardWidgetState extends State<ArticleCardWidget> {
               children: [
                 // Title
                 Text(
-                  "SupportedSupportedSupportedSupportedSupportedSupportedSupportedSupportedSupportedSupportedSupportedSupportedSupportedSupportedSupportedSupportedSupportedSupportedSupportedSupportedSupportedSupportedSupportedSupportedSupportedSupportedSupportedSupported",
+                  widget.nyTimesModel.title ?? defaultStr,
                   style: Theme.of(context).textTheme.headlineMedium,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
@@ -47,7 +84,7 @@ class _ArticleCardWidgetState extends State<ArticleCardWidget> {
                 ),
 
                 Text(
-                  "sdlkajsldkj kajsdkljaslkdjaklsd",
+                  widget.nyTimesModel.abstract ?? defaultStr,
                   style: Theme.of(context)
                       .textTheme
                       .bodyLarge!
@@ -59,8 +96,10 @@ class _ArticleCardWidgetState extends State<ArticleCardWidget> {
                   height: 5.h,
                 ),
 
+                // Published date
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Icon(
                       Icons.calendar_today_outlined,
@@ -70,12 +109,15 @@ class _ArticleCardWidgetState extends State<ArticleCardWidget> {
                     SizedBox(
                       width: 5.w,
                     ),
-                    Text(
-                      "01/01/2023",
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodyLarge!
-                          .copyWith(color: AppColors.darkGray),
+                    Flexible(
+                      child: Text(
+                        widget.nyTimesModel.publishedDate ?? defaultStr,
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodyLarge!
+                            .copyWith(color: AppColors.darkGray),
+                        textAlign: TextAlign.end,
+                      ),
                     ),
                   ],
                 )

@@ -9,16 +9,20 @@ class NyTimesInitial extends NyTimesState {}
 // --------------------Start Get Ny Times-------------------- //
 
 // Loading Get Ny Times State
-class LoadingDataState extends NyTimesState {}
+class LoadingGetNyTimesDataState extends NyTimesState {}
 
 // Error On Getting Ny Times State
-class ErrorDataState extends NyTimesState {
+class ErrorGetNyTimesDataState extends NyTimesState {
   final String errorMsg;
 
-  ErrorDataState(this.errorMsg);
+  ErrorGetNyTimesDataState(this.errorMsg);
 }
 
 // Success Get Ny Times State
-class SuccessDataState extends NyTimesState {}
+class SuccessGetNyTimesDataState extends NyTimesState {
+  final List<NyTimesModel> nyTimesArticles;
+
+  SuccessGetNyTimesDataState(this.nyTimesArticles);
+}
 
 // --------------------End NyTimes-------------------- //

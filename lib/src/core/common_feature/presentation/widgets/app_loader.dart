@@ -19,7 +19,7 @@ class AppLoader extends StatelessWidget {
             itemBuilder: (BuildContext context, int index) {
               return DecoratedBox(
                 decoration: BoxDecoration(
-                    color: iconColor ?? AppColors.primaryColor,
+                    color: iconColor ?? Theme.of(context).iconTheme.color,
                     borderRadius: BorderRadius.circular(25)),
               );
             },
