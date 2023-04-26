@@ -43,13 +43,13 @@ class _ArticleCardWidgetState extends State<ArticleCardWidget> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           // Circle Avatar
-          if(imageUrl!=null)...{
+          if (imageUrl != null) ...{
             CachedImageWidget(
               imageUrl: imageUrl!,
               radius: 50,
               width: 50.w,
             ),
-          }else...{
+          } else ...{
             SizedBox(
               width: 50.w,
               child: CircleAvatar(
@@ -58,7 +58,6 @@ class _ArticleCardWidgetState extends State<ArticleCardWidget> {
               ),
             )
           },
-
 
           // Space
           SizedBox(
@@ -103,7 +102,7 @@ class _ArticleCardWidgetState extends State<ArticleCardWidget> {
                   children: [
                     Icon(
                       Icons.calendar_today_outlined,
-                      size: 20,
+                      size: 15,
                       color: AppColors.gray,
                     ),
                     SizedBox(
@@ -114,7 +113,7 @@ class _ArticleCardWidgetState extends State<ArticleCardWidget> {
                         widget.nyTimesModel.publishedDate ?? defaultStr,
                         style: Theme.of(context)
                             .textTheme
-                            .bodyLarge!
+                            .titleSmall!
                             .copyWith(color: AppColors.darkGray),
                         textAlign: TextAlign.end,
                       ),
