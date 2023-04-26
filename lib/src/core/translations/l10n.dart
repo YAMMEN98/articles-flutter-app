@@ -119,6 +119,76 @@ class S {
       args: [],
     );
   }
+
+  /// ` Pull Up Load`
+  String get pull_up_load {
+    return Intl.message(
+      ' Pull Up Load',
+      name: 'pull_up_load',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Load failed! Click Retry!`
+  String get load_failed {
+    return Intl.message(
+      'Load failed! Click Retry!',
+      name: 'load_failed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Release To Load More`
+  String get release_to_load {
+    return Intl.message(
+      'Release To Load More',
+      name: 'release_to_load',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No Data!`
+  String get no_data {
+    return Intl.message(
+      'No Data!',
+      name: 'no_data',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Period`
+  String get period {
+    return Intl.message(
+      'Period',
+      name: 'period',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search`
+  String get search {
+    return Intl.message(
+      'Search',
+      name: 'search',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Server Error`
+  String get server_error {
+    return Intl.message(
+      'Server Error',
+      name: 'server_error',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

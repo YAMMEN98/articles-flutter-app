@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ny_times_app/src/core/styles/app_colors.dart';
+import 'package:ny_times_app/src/core/util/helper.dart';
 
 class ReloadWidget extends StatelessWidget {
   final String content;
@@ -9,12 +10,14 @@ class ReloadWidget extends StatelessWidget {
   final String image;
   final Color? iconColor;
 
-  const ReloadWidget.empty({
+   ReloadWidget.empty({
     Key? key,
     required this.content,
     this.onPressed,
     this.iconColor,
-  })  : image = "assets/svg_images/no_data.svg",
+  })  : image = Helper.isDarkTheme()?
+  "assets/svg_images/no_data_light.svg":
+  "assets/svg_images/no_data_dark.svg",
         super(key: key);
 
   const ReloadWidget.error({

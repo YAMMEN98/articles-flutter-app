@@ -4,9 +4,19 @@ abstract class NyTimesEvent {
   const NyTimesEvent();
 }
 
-/// On getting Ny times Event
+// On getting Ny times Event
 class OnGettingNyTimesEvent extends NyTimesEvent {
+  final String text;
   final int period;
-
-  OnGettingNyTimesEvent(this.period);
+  final bool withLoading;
+  OnGettingNyTimesEvent(this.text,this.period, {this.withLoading = true});
 }
+
+// On searching Event
+class OnSearchingEvent extends NyTimesEvent {
+  final String text;
+
+  OnSearchingEvent(this.text, );
+}
+
+

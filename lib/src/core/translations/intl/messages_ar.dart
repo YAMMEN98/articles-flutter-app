@@ -27,8 +27,17 @@ class MessageLookup extends MessageLookupByLibrary {
         "english": MessageLookupByLibrary.simpleMessage("English"),
         "language": MessageLookupByLibrary.simpleMessage("اللغة"),
         "light_skin": MessageLookupByLibrary.simpleMessage("المظهر النهاري"),
+        "load_failed": MessageLookupByLibrary.simpleMessage(
+            "فشل التحميل! انقر فوق إعادة المحاولة!"),
+        "no_data": MessageLookupByLibrary.simpleMessage("لا يوجد بيانات!"),
         "ny_times_most_popular":
             MessageLookupByLibrary.simpleMessage("NY Times الأكثر شيوعاً في"),
-        "required_field": MessageLookupByLibrary.simpleMessage("الحقل مطلوب")
+        "period": MessageLookupByLibrary.simpleMessage("الفترة"),
+        "pull_up_load": MessageLookupByLibrary.simpleMessage("اسحب للتحميل"),
+        "release_to_load":
+            MessageLookupByLibrary.simpleMessage("حرر لتحميل المزيد"),
+        "required_field": MessageLookupByLibrary.simpleMessage("الحقل مطلوب"),
+        "search": MessageLookupByLibrary.simpleMessage("البحث"),
+        "server_error": MessageLookupByLibrary.simpleMessage("خطأ بالمخدم")
       };
 }

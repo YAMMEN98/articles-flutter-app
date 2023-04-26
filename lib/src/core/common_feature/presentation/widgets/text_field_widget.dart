@@ -73,6 +73,7 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
         keyboardType: widget.keyboardType,
         textInputAction: widget.textInputAction,
         focusNode: widget.focusNode,
+        cursorColor: Theme.of(context).iconTheme.color,
         style: widget.textStyle ?? textStyle,
         inputFormatters: widget.inputFormatters,
         maxLines: widget.maxLines ?? 1,

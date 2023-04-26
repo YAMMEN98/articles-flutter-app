@@ -50,6 +50,8 @@ final ThemeData appTheme = ThemeData(
       contentPadding: EdgeInsets.symmetric(
         horizontal: 10.sp,
       ),
+      suffixIconColor: AppColors.black,
+
       border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10.sp),
           borderSide: const BorderSide(color: AppColors.white, width: 1)),
@@ -109,6 +111,7 @@ final ThemeData darkAppTheme = ThemeData(
       horizontal: 10.w,
     ),
     filled: true,
+    suffixIconColor: AppColors.white,
     fillColor: AppColors.transparent,
     border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(10.sp),

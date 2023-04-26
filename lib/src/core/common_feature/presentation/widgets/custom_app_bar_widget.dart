@@ -4,6 +4,7 @@ import 'package:ny_times_app/src/core/styles/app_colors.dart';
 import 'package:ny_times_app/src/core/util/helper.dart';
 
 class CustomAppBarWidget extends StatelessWidget {
+  final double? height;
   final Widget? leading;
   final Widget? title;
   final List<Widget>? actions;
@@ -11,6 +12,7 @@ class CustomAppBarWidget extends StatelessWidget {
 
   const CustomAppBarWidget({
     Key? key,
+    this.height,
     this.leading,
     this.title,
     this.actions,
@@ -20,9 +22,10 @@ class CustomAppBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: height??60.h,
       padding: EdgeInsets.symmetric(
         horizontal: 20.w,
-        vertical: 20.h
+        vertical: 0.h
       ),
       decoration: BoxDecoration(
           color: backgroundColor??Theme.of(context).scaffoldBackgroundColor,

@@ -22,6 +22,11 @@ class _ArticleCardWidgetState extends State<ArticleCardWidget> {
 
   @override
   void initState() {
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     // Check if somethings happened and do not return media
     // If everything seems to be in order we will display the image
     // else display solid circle instead
@@ -32,11 +37,6 @@ class _ArticleCardWidgetState extends State<ArticleCardWidget> {
         imageUrl = widget.nyTimesModel.media!.first.mediaMetadata!.first.url;
       }
     }
-    super.initState();
-  }
-
-  @override
-  Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 15.h),
       child: Row(
@@ -46,12 +46,12 @@ class _ArticleCardWidgetState extends State<ArticleCardWidget> {
           if (imageUrl != null) ...{
             CachedImageWidget(
               imageUrl: imageUrl!,
-              radius: 50,
-              width: 50.w,
+              radius: 200,
+              width: 70.sp,
             ),
           } else ...{
             SizedBox(
-              width: 50.w,
+              width: 70.sp,
               child: CircleAvatar(
                 backgroundColor: AppColors.gray,
                 radius: 40,
@@ -133,7 +133,13 @@ class _ArticleCardWidgetState extends State<ArticleCardWidget> {
           IconButton(
             padding: EdgeInsets.zero,
             constraints: BoxConstraints(),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(
+                context,
+                "/web_view_page",
+                arguments: widget.nyTimesModel.url,
+              );
+            },
             icon: Icon(
               Icons.arrow_forward_ios_rounded,
               size: 20,

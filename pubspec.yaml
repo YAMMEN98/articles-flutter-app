@@ -58,10 +58,6 @@ dependencies:
   # Loader
   flutter_spinkit: ^5.1.0
 
-  # Snack Bar
-  flutter_flushbar:
-    path: ./packages/flutter_flushbar-0.0.2
-
   # Svg Image
   flutter_svg: ^2.0.4
 
@@ -97,6 +93,9 @@ dependencies:
 
   # Ratting star
   flutter_rating_bar: ^4.0.1
+
+  # Web view
+  webview_flutter: ^4.2.0
 
 dev_dependencies:
   flutter_test:

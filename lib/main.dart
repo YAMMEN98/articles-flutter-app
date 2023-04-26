@@ -5,7 +5,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ny_times_app/src/core/common_feature/data/data_sources/app_shared_prefs.dart';
-import 'package:ny_times_app/src/core/common_feature/presentation/widgets/app_snack_bar.dart';
 import 'package:ny_times_app/src/core/styles/app_theme.dart';
 import 'package:ny_times_app/src/core/translations/l10n.dart';
 import 'package:ny_times_app/src/core/util/helper.dart';
@@ -22,7 +21,6 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await initInjections();
-  AppSnackBar.init();
   runApp(DevicePreview(
     builder: (context) {
       return const App();

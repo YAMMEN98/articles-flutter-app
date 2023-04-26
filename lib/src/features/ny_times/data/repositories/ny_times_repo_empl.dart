@@ -25,6 +25,8 @@ class NyTimesRepositoryImpl extends NyTimesRepository {
       });
     } on ServerException catch (e) {
       return Left(ServerFailure(e.message, e.statusCode));
+    }on CancelTokenException catch (e) {
+      return Left(CancelTokenFailure(e.message, e.statusCode));
     }
   }
 }

@@ -27,8 +27,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "english": MessageLookupByLibrary.simpleMessage("English"),
         "language": MessageLookupByLibrary.simpleMessage("Language"),
         "light_skin": MessageLookupByLibrary.simpleMessage("Light Skin"),
+        "load_failed":
+            MessageLookupByLibrary.simpleMessage("Load failed! Click Retry!"),
+        "no_data": MessageLookupByLibrary.simpleMessage("No Data!"),
         "ny_times_most_popular":
             MessageLookupByLibrary.simpleMessage("NY Times Most Popular"),
-        "required_field": MessageLookupByLibrary.simpleMessage("Required Field")
+        "period": MessageLookupByLibrary.simpleMessage("Period"),
+        "pull_up_load": MessageLookupByLibrary.simpleMessage(" Pull Up Load"),
+        "release_to_load":
+            MessageLookupByLibrary.simpleMessage("Release To Load More"),
+        "required_field":
+            MessageLookupByLibrary.simpleMessage("Required Field"),
+        "search": MessageLookupByLibrary.simpleMessage("Search"),
+        "server_error": MessageLookupByLibrary.simpleMessage("Server Error")
       };
 }

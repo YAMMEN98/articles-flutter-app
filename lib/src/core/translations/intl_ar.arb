@@ -5,6 +5,12 @@
   "required_field": "الحقل مطلوب",
   "dark_skin": "المظهر الليلي",
   "light_skin": "المظهر النهاري",
-  "language": "اللغة"
-
+  "language": "اللغة",
+  "pull_up_load": "اسحب للتحميل",
+  "load_failed": "فشل التحميل! انقر فوق إعادة المحاولة!",
+  "release_to_load": "حرر لتحميل المزيد",
+  "no_data": "لا يوجد بيانات!",
+  "period": "الفترة",
+  "search": "البحث",
+  "server_error": "خطأ بالمخدم"
 }

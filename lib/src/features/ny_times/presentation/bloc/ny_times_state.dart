@@ -6,7 +6,7 @@ abstract class NyTimesState {
 
 class NyTimesInitial extends NyTimesState {}
 
-// --------------------Start Get Ny Times-------------------- //
+// --------------------Start Get Ny Times States-------------------- //
 
 // Loading Get Ny Times State
 class LoadingGetNyTimesDataState extends NyTimesState {}
@@ -25,4 +25,17 @@ class SuccessGetNyTimesDataState extends NyTimesState {
   SuccessGetNyTimesDataState(this.nyTimesArticles);
 }
 
-// --------------------End NyTimes-------------------- //
+// --------------------End NyTimes States-------------------- //
+
+
+
+// --------------------Start Searching States-------------------- //
+
+class SearchingState extends NyTimesState {
+  final List<NyTimesModel> nyTimesArticles;
+
+  SearchingState(this.nyTimesArticles);
+
+}
+
+// --------------------End Searching States-------------------- //

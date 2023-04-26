@@ -326,13 +326,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.3.0"
-  flutter_flushbar:
-    dependency: "direct main"
-    description:
-      path: "packages/flutter_flushbar-0.0.2"
-      relative: true
-    source: path
-    version: "0.0.2"
   flutter_launcher_icons:
     dependency: "direct main"
     description:
@@ -993,6 +986,38 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.3.0"
+  webview_flutter:
+    dependency: "direct main"
+    description:
+      name: webview_flutter
+      sha256: "1a37bdbaaf5fbe09ad8579ab09ecfd473284ce482f900b5aea27cf834386a567"
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.2.0"
+  webview_flutter_android:
+    dependency: transitive
+    description:
+      name: webview_flutter_android
+      sha256: "203ac00a01970c1d5b10f75986766153d73e59f1882cfabcadf2c6682af15fe7"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.6.1"
+  webview_flutter_platform_interface:
+    dependency: transitive
+    description:
+      name: webview_flutter_platform_interface
+      sha256: "78715dc442b7849dbde74e92bb67de1cecf5addf95531c5fb474e72f5fe9a507"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.3.0"
+  webview_flutter_wkwebview:
+    dependency: transitive
+    description:
+      name: webview_flutter_wkwebview
+      sha256: c94d242d8cbe1012c06ba7ac790c46d6e6b68723b7d34f8c74ed19f68d166f49
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.4.0"
   win32:
     dependency: transitive
     description:

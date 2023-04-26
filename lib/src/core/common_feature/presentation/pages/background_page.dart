@@ -61,7 +61,7 @@ class _BackgroundPageState extends State<BackgroundPage> {
       },
       drawer: widget.withDrawer
           ? Drawer(
-              width: 0.7.w,
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
               child: AppDrawerPage(),
             )
           : null,
