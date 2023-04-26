@@ -1,29 +1,10 @@
 {
   "arabic": "العربية",
   "english": "English",
-  "explorer": "تصفح",
+  "ny_times_most_popular": "NY Times الأكثر شيوعاً في",
   "required_field": "الحقل مطلوب",
-  "type_to_search": "اكتب للبحث",
-  "all_movies": "كل الأفلام",
-  "pull_up_load": "اسحب للتحميل",
-  "load_failed": "فشل التحميل! انقر فوق إعادة المحاولة!",
-  "release_to_load": "حرر لتحميل المزيد",
-  "no_more_data": "لايوجد مزيد من البيانات",
-  "no_data": "لا يوجد بيانات!",
-  "ratings": "التقييمات",
-  "actors": "الممثلين",
-  "country": "المدينة",
-  "language": "اللغة",
-  "reset": "تهيئة",
-  "confirm": "تأكيد",
-  "movie": "فلم",
-  "series": "مسلسل",
-  "episode": "حلقة",
-  "movie_type": "نوع الفلم",
-  "type_in_search_to_filter": "اكتب في حقل البحث لإكمال عملية الفتلرة",
-  "enter_year": "ادخل العام",
   "dark_skin": "المظهر الليلي",
   "light_skin": "المظهر النهاري",
-  "start_search": "ابدا برحلة البحث عن الأفلام"
+  "language": "اللغة"
 
 }

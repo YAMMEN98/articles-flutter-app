@@ -6,19 +6,19 @@ abstract class NyTimesState {
 
 class NyTimesInitial extends NyTimesState {}
 
-/// --------------------Start NyTimes-------------------- ///
+// --------------------Start Get Ny Times-------------------- //
 
-/// Loading feature name state
+// Loading Get Ny Times State
 class LoadingDataState extends NyTimesState {}
 
-/// Error feature name state
+// Error On Getting Ny Times State
 class ErrorDataState extends NyTimesState {
   final String errorMsg;
 
   ErrorDataState(this.errorMsg);
 }
 
-/// Success feature name state
+// Success Get Ny Times State
 class SuccessDataState extends NyTimesState {}
 
-/// --------------------End NyTimes-------------------- ///
+// --------------------End NyTimes-------------------- //

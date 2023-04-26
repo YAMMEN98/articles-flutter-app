@@ -4,7 +4,9 @@ abstract class NyTimesEvent {
   const NyTimesEvent();
 }
 
-/// NyTimes event
-class OnRequestingNyTimesEvent extends NyTimesEvent {
-}
+/// On getting Ny times Event
+class OnGettingNyTimesEvent extends NyTimesEvent {
+  final int period;
 
+  OnGettingNyTimesEvent(this.period);
+}

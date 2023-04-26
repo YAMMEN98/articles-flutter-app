@@ -2,6 +2,7 @@ import 'package:ny_times_app/src/core/network/error/exceptions.dart';
 import 'package:ny_times_app/src/core/network/error/failures.dart';
 import 'package:ny_times_app/src/features/ny_times/data/data_sources/ny_times_api.dart';
 import 'package:ny_times_app/src/features/ny_times/data/data_sources/ny_times_shared_prefs.dart';
+import 'package:ny_times_app/src/features/ny_times/data/entities/ny_times_model.dart';
 import 'package:ny_times_app/src/features/ny_times/domain/repositories/ny_times_repository.dart';
 import 'package:ny_times_app/src/features/ny_times/domain/usecases/ny_times_usecase.dart';
 import 'package:dartz/dartz.dart';
@@ -12,11 +13,11 @@ class NyTimesRepositoryImpl extends NyTimesRepository {
 
   NyTimesRepositoryImpl(this.nyTimesApi, this.nyTimesPrefs);
 
-  /// NyTimes method
+  // Gent Ny Times Articles
   @override
-  Future<Either<Failure, String>> nyTimes(NyTimesParams params) async {
+  Future<Either<Failure, NyTimesModel>> getNyTimesData(NyTimesParams params) async {
     try {
-      final result = await nyTimesApi.nyTimes(params);
+      final result = await nyTimesApi.getNyTimesData(params);
       return result.fold((l) {
         return Left(ServerFailure(l.errorMessage, null));
       }, (r) {

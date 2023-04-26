@@ -12,16 +12,17 @@ class NyTimesBloc extends Bloc<NyTimesEvent, NyTimesState> {
   NyTimesBloc() : super(NyTimesInitial()) {
     nyTimesUseCase = sl<NyTimesUseCase>();
 
-    on<OnRequestingNyTimesEvent>(_onLoggingIn);
+    on<OnGettingNyTimesEvent>(_onLoggingIn);
   }
 
   /// NyTimes event
-  _onLoggingIn(OnRequestingNyTimesEvent event,
-      Emitter<NyTimesState> emitter) async {
+  _onLoggingIn(
+      OnGettingNyTimesEvent event, Emitter<NyTimesState> emitter) async {
     emitter(LoadingDataState());
-
     final result = await nyTimesUseCase.call(
-      NyTimesParams()
+      NyTimesParams(
+        period: event.period,
+      ),
     );
     result.fold((l) {
       emitter(ErrorDataState(l.errorMessage));

@@ -1,16 +1,11 @@
-import 'dart:async';
 import 'dart:convert';
 
-import 'package:ny_times_app/src/core/common_feature/domain/entities/log_tags.dart';
-import 'package:ny_times_app/src/core/network/logger_interceptor.dart';
-import 'package:ny_times_app/src/core/util/log/app_logger.dart';
-import 'package:ny_times_app/src/core/util/constant/network_constant.dart';
-import 'package:ny_times_app/src/core/util/helper.dart';
-import 'package:ny_times_app/src/core/util/injections.dart';
-import 'package:ny_times_app/src/core/util/log/log_controller.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter_logs/flutter_logs.dart';
+import 'package:ny_times_app/src/core/network/logger_interceptor.dart';
+import 'package:ny_times_app/src/core/util/constant/network_constant.dart';
+import 'package:ny_times_app/src/core/util/helper.dart';
+import 'package:ny_times_app/src/core/util/log/app_logger.dart';
 
 class DioNetwork {
   static late Dio appAPI;
@@ -52,14 +47,9 @@ class DioNetwork {
         }
         options.headers = headers;
         appAPI.options.headers = headers;
-
-        sl<LogController>()
-            .log(LogTags.request, json.encode(options.queryParameters), LogLevel.INFO);
         return r.next(options);
       },
       onError: (error, handler) async {
-        sl<LogController>().log(
-            LogTags.error, json.encode(error.response?.data), LogLevel.INFO);
         try {
           return handler.next(error);
         } catch (e) {
@@ -69,8 +59,6 @@ class DioNetwork {
       },
       onResponse: (Response<dynamic> response,
           ResponseInterceptorHandler handler) async {
-        sl<LogController>()
-            .log(LogTags.response, json.encode(response.data), LogLevel.INFO);
         return handler.next(response);
       },
     );
@@ -85,14 +73,9 @@ class DioNetwork {
         options.headers = headers;
         appAPI.options.headers = headers;
 
-        sl<LogController>()
-            .log(LogTags.request, json.encode(options.queryParameters), LogLevel.INFO);
         return r.next(options);
       },
       onResponse: (response, handler) async {
-        sl<LogController>()
-            .log(LogTags.response, json.encode(response.data), LogLevel.INFO);
-
         if ("${(response.data["code"] ?? "0")}" != "0") {
           return handler.resolve(response);
           // return handler.reject(DioError(requestOptions: response.requestOptions, response: response, error: response, type: DioErrorType.response));
@@ -101,8 +84,6 @@ class DioNetwork {
         }
       },
       onError: (error, handler) {
-        sl<LogController>().log(
-            LogTags.error, json.encode(error.response?.data), LogLevel.ERROR);
         try {
           return handler.next(error);
         } catch (e) {
@@ -111,21 +92,6 @@ class DioNetwork {
         }
       },
     );
-  }
-
-  /// Retry app api
-  static Future<Response> _retry(Response response) async {
-    final options = Options(
-      method: response.requestOptions.method,
-      headers: Helper.getHeaders(),
-    );
-    sl<LogController>().log(LogTags.error,
-        json.encode(response.requestOptions.data), LogLevel.ERROR);
-
-    return (await DioNetwork.retryAPI.request(response.requestOptions.path,
-        data: response.requestOptions.data,
-        queryParameters: response.requestOptions.queryParameters,
-        options: options));
   }
 
   static BaseOptions baseOptions(String url) {

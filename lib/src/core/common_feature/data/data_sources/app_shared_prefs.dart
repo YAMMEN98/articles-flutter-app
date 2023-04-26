@@ -22,7 +22,7 @@ class AppSharedPrefs {
 
   /// __________ Dark Theme __________ ///
   bool getIsDarkTheme() {
-    return _preferences.getBool(theme) ?? false;
+    return _preferences.getBool(theme) ?? true;
   }
 
   void setDarkTheme(bool isDark) {

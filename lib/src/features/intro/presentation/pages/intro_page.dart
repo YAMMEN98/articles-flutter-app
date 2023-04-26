@@ -1,4 +1,5 @@
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:ny_times_app/src/core/styles/app_colors.dart';
 import 'package:ny_times_app/src/core/util/helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -30,10 +31,12 @@ class _IntroPageState extends State<IntroPage> {
       body: Center(
         child: Padding(
           padding: EdgeInsets.all(15.sp),
-          child: SvgPicture.asset(
-            Helper.getSvgPath("logo.svg"),
-            width: 100.w,
-            height: 100.h,
+          child: Image.asset(
+            Helper.getImagePath("logo.png"),
+            color: Helper.isDarkTheme()?AppColors.white:null,
+            width: 300.w,
+            height: 300.h,
+            fit: BoxFit.contain,
           ),
         ),
       ),

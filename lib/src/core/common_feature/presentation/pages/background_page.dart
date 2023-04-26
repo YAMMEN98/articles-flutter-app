@@ -12,6 +12,7 @@ class BackgroundPage extends StatefulWidget {
   final GlobalKey<ScaffoldState>? scaffoldKey;
   final bool topSafeArea;
   final bool bottomSafeArea;
+  final PreferredSizeWidget? appBar;
 
   const BackgroundPage({
     required this.child,
@@ -19,6 +20,7 @@ class BackgroundPage extends StatefulWidget {
     this.withDrawer = false,
     this.drawerCallBack,
     this.scaffoldKey,
+    this.appBar,
     Key? key,
     this.topSafeArea = true,
     this.bottomSafeArea = true,
@@ -41,10 +43,11 @@ class _BackgroundPageState extends State<BackgroundPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: widget.appBar,
       key: widget.scaffoldKey,
       backgroundColor: widget.backgroundColor == null
-          ? Colors.transparent
-          : Theme.of(context).scaffoldBackgroundColor,
+          ? Theme.of(context).scaffoldBackgroundColor
+          : widget.backgroundColor,
       resizeToAvoidBottomInset: false,
       onDrawerChanged: (isOpened) {
         if (!isOpened) {

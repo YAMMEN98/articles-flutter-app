@@ -70,11 +70,11 @@ class S {
     );
   }
 
-  /// `Explore`
-  String get explorer {
+  /// `NY Times Most Popular`
+  String get ny_times_most_popular {
     return Intl.message(
-      'Explore',
-      name: 'explorer',
+      'NY Times Most Popular',
+      name: 'ny_times_most_popular',
       desc: '',
       args: [],
     );
@@ -85,196 +85,6 @@ class S {
     return Intl.message(
       'Required Field',
       name: 'required_field',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Type to Search`
-  String get type_to_search {
-    return Intl.message(
-      'Type to Search',
-      name: 'type_to_search',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `All Movies`
-  String get all_movies {
-    return Intl.message(
-      'All Movies',
-      name: 'all_movies',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// ` Pull Up Load`
-  String get pull_up_load {
-    return Intl.message(
-      ' Pull Up Load',
-      name: 'pull_up_load',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Load failed! Click Retry!`
-  String get load_failed {
-    return Intl.message(
-      'Load failed! Click Retry!',
-      name: 'load_failed',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Release To Load More`
-  String get release_to_load {
-    return Intl.message(
-      'Release To Load More',
-      name: 'release_to_load',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `No More Data`
-  String get no_more_data {
-    return Intl.message(
-      'No More Data',
-      name: 'no_more_data',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `No Data!`
-  String get no_data {
-    return Intl.message(
-      'No Data!',
-      name: 'no_data',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Ratings`
-  String get ratings {
-    return Intl.message(
-      'Ratings',
-      name: 'ratings',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Actors`
-  String get actors {
-    return Intl.message(
-      'Actors',
-      name: 'actors',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Country`
-  String get country {
-    return Intl.message(
-      'Country',
-      name: 'country',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Language`
-  String get language {
-    return Intl.message(
-      'Language',
-      name: 'language',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Reset`
-  String get reset {
-    return Intl.message(
-      'Reset',
-      name: 'reset',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Confirm`
-  String get confirm {
-    return Intl.message(
-      'Confirm',
-      name: 'confirm',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Movie`
-  String get movie {
-    return Intl.message(
-      'Movie',
-      name: 'movie',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Series`
-  String get series {
-    return Intl.message(
-      'Series',
-      name: 'series',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Episode`
-  String get episode {
-    return Intl.message(
-      'Episode',
-      name: 'episode',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Movie Type`
-  String get movie_type {
-    return Intl.message(
-      'Movie Type',
-      name: 'movie_type',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Type in search field to complete filtering process`
-  String get type_in_search_to_filter {
-    return Intl.message(
-      'Type in search field to complete filtering process',
-      name: 'type_in_search_to_filter',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Enter Year`
-  String get enter_year {
-    return Intl.message(
-      'Enter Year',
-      name: 'enter_year',
       desc: '',
       args: [],
     );
@@ -300,11 +110,11 @@ class S {
     );
   }
 
-  /// `Start your search for movies`
-  String get start_search {
+  /// `Language`
+  String get language {
     return Intl.message(
-      'Start your search for movies',
-      name: 'start_search',
+      'Language',
+      name: 'language',
       desc: '',
       args: [],
     );

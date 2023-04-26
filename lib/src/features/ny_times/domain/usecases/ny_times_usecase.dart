@@ -1,16 +1,17 @@
 import 'package:ny_times_app/src/core/network/error/failures.dart';
 import 'package:ny_times_app/src/core/util/usecases/usecase.dart';
+import 'package:ny_times_app/src/features/ny_times/data/entities/ny_times_model.dart';
 import 'package:ny_times_app/src/features/ny_times/domain/repositories/ny_times_repository.dart';
 import 'package:dartz/dartz.dart';
 
-class NyTimesUseCase extends UseCase<String, NyTimesParams> {
+class NyTimesUseCase extends UseCase<NyTimesModel, NyTimesParams> {
   final NyTimesRepository repository;
 
 NyTimesUseCase(this.repository);
 
   @override
-  Future<Either<Failure, String>> call(NyTimesParams params) async {
-    final result = await repository.nyTimes(params);
+  Future<Either<Failure, NyTimesModel>> call(NyTimesParams params) async {
+    final result = await repository.getNyTimesData(params);
     return result.fold((l) {
       return Left(l);
     }, (r) async {
@@ -19,13 +20,21 @@ NyTimesUseCase(this.repository);
   }
 }
 
-class NyTimesParams {
-  NyTimesParams();
 
-  NyTimesParams.fromJson(Map<String, dynamic> json) {}
+class NyTimesParams {
+  NyTimesParams({
+    required this.period,
+  });
+  late final int period;
+
+  NyTimesParams.fromJson(Map<String, dynamic> json){
+    period = json['period'];
+  }
 
   Map<String, dynamic> toJson() {
-    final data = <String, dynamic>{};
-    return data..removeWhere((key, value) => value == null);
+    final _data = <String, dynamic>{};
+    _data['period'] = period;
+    return _data;
   }
 }
+
