@@ -23,6 +23,7 @@ class _ArticleCardWidgetState extends State<ArticleCardWidget> {
             backgroundColor: AppColors.gray,
           ),
 
+          // Space
           SizedBox(
             width: Helper.getVerticalSpace(),
           ),
@@ -42,14 +43,15 @@ class _ArticleCardWidgetState extends State<ArticleCardWidget> {
 
                 // Space
                 SizedBox(
-                  height: Helper.getVerticalSpace()*2,
+                  height: Helper.getVerticalSpace() * 2,
                 ),
 
                 Text(
                   "sdlkajsldkj kajsdkljaslkdjaklsd",
-                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                      color: AppColors.darkGray
-                  ),
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyLarge!
+                      .copyWith(color: AppColors.darkGray),
                 ),
 
                 // Space
@@ -65,20 +67,35 @@ class _ArticleCardWidgetState extends State<ArticleCardWidget> {
                       size: 20,
                       color: AppColors.gray,
                     ),
-
                     SizedBox(
                       width: 5.w,
                     ),
-
                     Text(
                       "01/01/2023",
-                      style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                          color: AppColors.darkGray
-                      ),
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodyLarge!
+                          .copyWith(color: AppColors.darkGray),
                     ),
                   ],
                 )
               ],
+            ),
+          ),
+
+          // Space
+          SizedBox(
+            width: Helper.getVerticalSpace(),
+          ),
+
+          // Arrow icon
+          IconButton(
+            padding: EdgeInsets.zero,
+            constraints: BoxConstraints(),
+            onPressed: () {},
+            icon: Icon(
+              Icons.arrow_forward_ios_rounded,
+              size: 20,
             ),
           )
         ],
