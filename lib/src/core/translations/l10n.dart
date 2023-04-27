@@ -189,6 +189,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Article Details`
+  String get article_details {
+    return Intl.message(
+      'Article Details',
+      name: 'article_details',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `See More`
+  String get see_more {
+    return Intl.message(
+      'See More',
+      name: 'see_more',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

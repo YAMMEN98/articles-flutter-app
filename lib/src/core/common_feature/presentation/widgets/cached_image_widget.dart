@@ -38,12 +38,12 @@ class CachedImageWidget extends StatelessWidget {
                   width: width,
                   fit: BoxFit.cover,
                   errorWidget: (context, url, error) => Image.asset(
-                    Helper.getImagePath("no_image.jpg"),
-                    fit: BoxFit.fill,
+                    Helper.getImagePath("no_image.png"),
+                    fit: BoxFit.contain,
                   ),
                 )
               : Image.asset(
-                  'assets/images/no_records.png',
+                  Helper.getImagePath("no_image.png"),
                   height: height,
                   width: width,
                   fit: BoxFit.contain,

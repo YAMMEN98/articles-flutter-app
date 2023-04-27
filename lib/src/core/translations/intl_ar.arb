@@ -12,5 +12,7 @@
   "no_data": "لا يوجد بيانات!",
   "period": "الفترة",
   "search": "البحث",
-  "server_error": "خطأ بالمخدم"
+  "server_error": "خطأ بالمخدم",
+  "article_details": "تفاصيل المقالة",
+  "see_more": "مشاهدة المزيد"
 }

@@ -12,5 +12,8 @@
   "no_data": "No Data!",
   "period": "Period",
   "search": "Search",
-  "server_error": "Server Error"
+  "server_error": "Server Error",
+  "article_details": "Article Details",
+  "see_more": "See More"
+
 }

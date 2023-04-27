@@ -1,16 +1,44 @@
 # ny_times_app
 
-A new Flutter project wit Clean Architecture
+A new Flutter project with Clean Architecture to fetch thw New Work Time
+Articles, display article details, and see more about details from url.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+## Prerequisites
+- Flutter SDK
+- Android Studio or VS Code
+- Dart plugin for your IDE
 
-A few resources to get you started if this is your first Flutter project:
+## Installing
+x- Clone the repository ```git clone https://github.com/YAMMEN98/ny-times-flutter-app.git```
+- Open the project in Android Studio or VS Code.
+  - Run the app on an emulator or physical device.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Feature
+- Get all ny times articles.
+- Search articles.
+- Filter article by ```period```
+- Display article details.
+- Apply Dark/Light theme.
+- Apply localization en/ar languages.
+- Create a lane to generate apk when upload code to main branch.
+- Unit Test.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Built With
+- [Flutter](https://github.com/vedranMv/dataDashboard/releases) - The framework used).
+- [The New Work a Times API](https://developer.nytimes.com/) - API used for weather data.
+
+## Unit Test
+  To run test you should follow the steps:
+  - run command ```flutter test```
+  - If you want to get coverage file from Unit Test run this.command ```flutter test --coverage```
+  
+  To generate coverage report follow these steps:
+- Run the following command to make sure all flutter library is up-to-date ```flutter pub get```,
+  - Run the following command to generate lcov.info on coverage directory ```flutter test --coverage```,
+  - Run the tool to generate report from lcov.info ```flutter pub run test_cov_console```,
+  - You can follow and see more of parameters in [test_cov_console](https://pub.dev/packages/test_cov_console).
+  - Output to CSV  file (-c, --csv, -o, --output) by ```flutter pub run test_cov_console -c --output=coverage/test_coverage.csv```
+## Author
+  Yamen Abdullrahman - Senior Flutter Developer;

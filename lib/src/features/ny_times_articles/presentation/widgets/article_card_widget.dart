@@ -40,7 +40,7 @@ class _ArticleCardWidgetState extends State<ArticleCardWidget> {
       }
     }
 
-    // Small image for view and zoom it
+    // Big image for view and zoom it
     // Check if somethings happened and do not return media
     // If everything seems to be in order we will display the image
     // else display solid circle instead
@@ -163,11 +163,13 @@ class _ArticleCardWidgetState extends State<ArticleCardWidget> {
             padding: EdgeInsets.zero,
             constraints: BoxConstraints(),
             onPressed: () {
+
               Navigator.pushNamed(
                 context,
-                "/web_view_page",
-                arguments: widget.nyTimesModel.url,
+                "/ny_times_article_details_page",
+                arguments: widget.nyTimesModel,
               );
+
             },
             icon: Icon(
               Icons.arrow_forward_ios_rounded,

@@ -24,6 +24,7 @@ final ThemeData appTheme = ThemeData(
     systemOverlayStyle: SystemUiOverlayStyle.light,
   ),
   // fontFamily: GoogleFonts.chakraPetch().fontFamily,
+  fontFamily: "Georgia",
   scaffoldBackgroundColor: AppColors.white,
   iconTheme: const IconThemeData(color: AppColors.black, size: 25),
   textTheme: const TextTheme(
@@ -81,6 +82,7 @@ final ThemeData darkAppTheme = ThemeData(
     systemOverlayStyle: SystemUiOverlayStyle.light,
   ),
   // fontFamily: GoogleFonts.chakraPetch().fontFamily,
+  fontFamily: "Georgia",
   scaffoldBackgroundColor: AppColors.primaryColor,
 
   iconTheme: const IconThemeData(color: AppColors.white, size: 25),

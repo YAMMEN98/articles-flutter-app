@@ -23,6 +23,8 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "arabic": MessageLookupByLibrary.simpleMessage("العربية"),
+        "article_details":
+            MessageLookupByLibrary.simpleMessage("Article Details"),
         "dark_skin": MessageLookupByLibrary.simpleMessage("Dark Skin"),
         "english": MessageLookupByLibrary.simpleMessage("English"),
         "language": MessageLookupByLibrary.simpleMessage("Language"),
@@ -39,6 +41,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "required_field":
             MessageLookupByLibrary.simpleMessage("Required Field"),
         "search": MessageLookupByLibrary.simpleMessage("Search"),
+        "see_more": MessageLookupByLibrary.simpleMessage("See More"),
         "server_error": MessageLookupByLibrary.simpleMessage("Server Error")
       };
 }
