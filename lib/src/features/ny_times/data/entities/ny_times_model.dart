@@ -57,8 +57,24 @@ class NyTimesModel {
 
   toJson() => _$NyTimesModelToJson(this);
 
-  static List<NyTimesModel> fromJsonList(List json) {
-    return json.map((e) => NyTimesModel.fromJson(e)).toList();
+  static List<NyTimesModel> fromJsonList(List? json) {
+    return json?.map((e) => NyTimesModel.fromJson(e)).toList()??[];
+  }
+
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) {
+      return true;
+    }
+    if (other.runtimeType != runtimeType) {
+      return false;
+    }
+    if (other is NyTimesModel) {
+      return other.id == id;
+    }
+
+    return false;
   }
 }
 

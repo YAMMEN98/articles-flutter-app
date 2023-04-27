@@ -5,34 +5,41 @@ import 'package:ny_times_app/src/core/network/error/exceptions.dart';
 import 'package:ny_times_app/src/core/network/error/failures.dart';
 import 'package:ny_times_app/src/core/translations/l10n.dart';
 import 'package:ny_times_app/src/core/util/constant/network_constant.dart';
+import 'package:ny_times_app/src/features/ny_times/data/entities/ny_times_article_response_model.dart';
 import 'package:ny_times_app/src/features/ny_times/data/entities/ny_times_model.dart';
 import 'package:ny_times_app/src/features/ny_times/domain/usecases/ny_times_usecase.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 
 class NyTimesApi {
+  final Dio dio;
+
   CancelToken cancelToken = CancelToken();
 
+  NyTimesApi(this.dio);
 
   /// NyTimes method
-  Future<Either<Failure, List<NyTimesModel>>> getNyTimesData(
+  Future< ApiResponse<List<NyTimesModel>>> getNyTimesData(
       NyTimesParams params) async {
-    cancelToken = CancelToken();
-
     try {
-      final result = (await DioNetwork.appAPI.get(
+      final result = (await dio.get(
         getNyTimeArticle(params.period),
-        cancelToken: cancelToken,
-      )).data;
+      ))
+          ;
+      if(result.data==null)
+        throw ServerException("UnKnow Error", result.statusCode);
 
-        return Right(NyTimesModel.fromJsonList(result['results']));
+      return ApiResponse.fromJson<List<NyTimesModel>>(result.data, NyTimesModel.fromJsonList);
     } on DioError catch (e) {
       if (e.type == DioErrorType.cancel) {
         throw CancelTokenException(handleDioError(e), e.response?.statusCode);
-      }else{
+      } else {
         throw ServerException(handleDioError(e), e.response?.statusCode);
       }
-    } catch (e) {
+    } on ServerException catch (e){
+      rethrow ;
+    }
+    catch (e) {
       throw ServerException(e.toString(), null);
     }
   }

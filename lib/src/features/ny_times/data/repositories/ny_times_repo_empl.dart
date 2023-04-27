@@ -18,11 +18,7 @@ class NyTimesRepositoryImpl extends NyTimesRepository {
   Future<Either<Failure, List<NyTimesModel>>> getNyTimesData(NyTimesParams params) async {
     try {
       final result = await nyTimesApi.getNyTimesData(params);
-      return result.fold((l) {
-        return Left(ServerFailure(l.errorMessage, null));
-      }, (r) {
-        return Right(r);
-      });
+      return Right(result.results??[]);
     } on ServerException catch (e) {
       return Left(ServerFailure(e.message, e.statusCode));
     }on CancelTokenException catch (e) {

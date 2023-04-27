@@ -36,14 +36,11 @@ class AppRouter {
           settings: RouteSettings(name: settings.name),
           builder: (_) {
             Map<String, dynamic>? args = settings.arguments as Map<String, dynamic>?;
-            if(args != null){
+            assert(args!=null, "You should pass 'path' and 'fromNet'");
               return PhotoViewPage(
                 path: args!['path'],
-                fromNet: args!['fromNet'],
+                fromNet: args['fromNet'],
               );
-            }
-            return Text("TODO");
-
           },
         );
 
