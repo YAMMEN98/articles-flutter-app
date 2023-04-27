@@ -1,15 +1,12 @@
-import 'dart:convert';
-
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:ny_times_app/src/core/network/error/exceptions.dart';
 import 'package:ny_times_app/src/core/util/constant/network_constant.dart';
-import 'package:ny_times_app/src/features/ny_times/data/data_sources/ny_times_api.dart';
-import 'package:ny_times_app/src/features/ny_times/data/entities/ny_times_article_response_model.dart';
-import 'package:ny_times_app/src/features/ny_times/data/entities/ny_times_model.dart';
-import 'package:ny_times_app/src/features/ny_times/domain/usecases/ny_times_usecase.dart';
+import 'package:ny_times_app/src/features/ny_times_articles/data/data_sources/ny_times_articles_api.dart';
+import 'package:ny_times_app/src/features/ny_times_articles/data/entities/ny_times_articles_model.dart';
+import 'package:ny_times_app/src/features/ny_times_articles/domain/usecases/ny_times_articles_usecase.dart';
 
 import 'mock_data/mock_ny_times_data.dart';
 import 'mock_data/mock_ny_times_json.dart';
@@ -17,19 +14,19 @@ import 'ny_times_api_test.mocks.dart';
 
 @GenerateMocks([Dio, HttpClientAdapter])
 void main() {
-  NyTimesParams nyTimesParams = NyTimesParams(period: 30);
+  NyTimesArticlesParams nyTimesParams = NyTimesArticlesParams(period: 30);
   late MockDio mockDio;
   late MockHttpClientAdapter mockHttpClientAdapter;
-  late NyTimesApi nyTimesApi;
+  late NyTimesArticlesApi nyTimesApi;
   setUp(() {
     mockDio = MockDio();
     mockHttpClientAdapter = MockHttpClientAdapter();
     mockDio.httpClientAdapter = mockHttpClientAdapter;
-    nyTimesApi = NyTimesApi(mockDio);
+    nyTimesApi = NyTimesArticlesApi(mockDio);
   });
 
-  List<NyTimesModel> mockArticles = [
-    NyTimesModel(title: "Title"),
+  List<NyTimesArticlesModel> mockArticles = [
+    NyTimesArticlesModel(title: "Title"),
   ];
 
   RequestOptions requestOptions = RequestOptions(

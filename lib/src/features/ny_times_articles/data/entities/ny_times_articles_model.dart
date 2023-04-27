@@ -1,10 +1,10 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:ny_times_app/src/features/ny_times/data/entities/media_model.dart';
-part 'ny_times_model.g.dart';
+import 'package:ny_times_app/src/features/ny_times_articles/data/entities/media_model.dart';
+part 'ny_times_articles_model.g.dart';
 
 @JsonSerializable(fieldRename: FieldRename.snake)
 
-class NyTimesModel {
+class NyTimesArticlesModel {
   String? uri;
   String? url;
   int? id;
@@ -29,7 +29,7 @@ class NyTimesModel {
   List<MediaModel>? media;
   int? etaId;
 
-  NyTimesModel(
+  NyTimesArticlesModel(
       {this.uri,
         this.url,
         this.id,
@@ -53,12 +53,12 @@ class NyTimesModel {
         this.media,
         this.etaId});
 
-  factory NyTimesModel.fromJson(json) => _$NyTimesModelFromJson(json);
+  factory NyTimesArticlesModel.fromJson(json) => _$NyTimesArticlesModelFromJson(json);
 
-  toJson() => _$NyTimesModelToJson(this);
+  toJson() => _$NyTimesArticlesModelToJson(this);
 
-  static List<NyTimesModel> fromJsonList(List? json) {
-    return json?.map((e) => NyTimesModel.fromJson(e)).toList()??[];
+  static List<NyTimesArticlesModel> fromJsonList(List? json) {
+    return json?.map((e) => NyTimesArticlesModel.fromJson(e)).toList()??[];
   }
 
 
@@ -70,7 +70,7 @@ class NyTimesModel {
     if (other.runtimeType != runtimeType) {
       return false;
     }
-    if (other is NyTimesModel) {
+    if (other is NyTimesArticlesModel) {
       return other.id == id;
     }
 

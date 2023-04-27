@@ -1,12 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'ny_times_model.dart';
+part of 'ny_times_articles_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-NyTimesModel _$NyTimesModelFromJson(Map<String, dynamic> json) => NyTimesModel(
+NyTimesArticlesModel _$NyTimesArticlesModelFromJson(
+        Map<String, dynamic> json) =>
+    NyTimesArticlesModel(
       uri: json['uri'] as String?,
       url: json['url'] as String?,
       id: json['id'] as int?,
@@ -41,7 +43,8 @@ NyTimesModel _$NyTimesModelFromJson(Map<String, dynamic> json) => NyTimesModel(
       etaId: json['eta_id'] as int?,
     );
 
-Map<String, dynamic> _$NyTimesModelToJson(NyTimesModel instance) =>
+Map<String, dynamic> _$NyTimesArticlesModelToJson(
+        NyTimesArticlesModel instance) =>
     <String, dynamic>{
       'uri': instance.uri,
       'url': instance.url,

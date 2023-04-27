@@ -9,20 +9,20 @@ import 'package:ny_times_app/src/core/common_feature/presentation/widgets/text_f
 import 'package:ny_times_app/src/core/styles/app_colors.dart';
 import 'package:ny_times_app/src/core/translations/l10n.dart';
 import 'package:ny_times_app/src/core/util/helper.dart';
-import 'package:ny_times_app/src/features/ny_times/data/entities/ny_times_model.dart';
-import 'package:ny_times_app/src/features/ny_times/presentation/bloc/ny_times_bloc.dart';
-import 'package:ny_times_app/src/features/ny_times/presentation/widgets/article_card_widget.dart';
+import 'package:ny_times_app/src/features/ny_times_articles/data/entities/ny_times_articles_model.dart';
+import 'package:ny_times_app/src/features/ny_times_articles/presentation/bloc/ny_times_articles_bloc.dart';
+import 'package:ny_times_app/src/features/ny_times_articles/presentation/widgets/article_card_widget.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
-class NyTimesPage extends StatefulWidget {
-  const NyTimesPage({Key? key}) : super(key: key);
+class NyTimesArticlesPage extends StatefulWidget {
+  const NyTimesArticlesPage({Key? key}) : super(key: key);
 
   @override
-  State<NyTimesPage> createState() => _NyTimesPageState();
+  State<NyTimesArticlesPage> createState() => _NyTimesArticlesPageState();
 }
 
-class _NyTimesPageState extends State<NyTimesPage> {
-  NyTimesBloc _bloc = NyTimesBloc();
+class _NyTimesArticlesPageState extends State<NyTimesArticlesPage> {
+  NyTimesArticlesBloc _bloc = NyTimesArticlesBloc();
 
   // Key for scaffold to open drawer
   GlobalKey<ScaffoldState> _key = GlobalKey();
@@ -34,7 +34,7 @@ class _NyTimesPageState extends State<NyTimesPage> {
   bool isSearching = false;
 
   // List of articles
-  List<NyTimesModel> nyTimesArticles = [];
+  List<NyTimesArticlesModel> nyTimesArticles = [];
 
   // Search text field
   TextEditingController _searchController = TextEditingController();
@@ -66,7 +66,7 @@ class _NyTimesPageState extends State<NyTimesPage> {
                     hintText: S.of(context).search,
                     onChanged: (value) {
                       _bloc.add(
-                        OnSearchingEvent(
+                        OnSearchingArticlesEvent(
                           (value?.trim() ?? ""),
                         ),
                       );
@@ -238,10 +238,10 @@ class _NyTimesPageState extends State<NyTimesPage> {
 
           // List of articles
           Expanded(
-            child: BlocConsumer<NyTimesBloc, NyTimesState>(
+            child: BlocConsumer<NyTimesArticlesBloc, NyTimesArticlesState>(
               bloc: _bloc,
               listener: (context, state) {
-                if (state is SuccessGetNyTimesDataState) {
+                if (state is SuccessGetNyTimesArticlesState) {
                   nyTimesArticles.clear();
                   nyTimesArticles = List.from(state.nyTimesArticles);
                   _refreshController.refreshCompleted(
@@ -253,9 +253,9 @@ class _NyTimesPageState extends State<NyTimesPage> {
                 }
               },
               builder: (context, state) {
-                if (state is LoadingGetNyTimesDataState) {
+                if (state is LoadingGetNyTimesArticlesState) {
                   return const AppLoader();
-                } else if (state is ErrorGetNyTimesDataState) {
+                } else if (state is ErrorGetNyTimesArticlesState) {
                   return ReloadWidget.error(
                     content: state.errorMsg,
                     onPressed: () {
@@ -303,7 +303,7 @@ class _NyTimesPageState extends State<NyTimesPage> {
   // Call articles
   callArticles({bool withLoading = true}) {
     _bloc.add(
-      OnGettingNyTimesEvent(
+      OnGettingNyTimesArticlesEvent(
         _searchController.text.trim(),
         selectedPeriod,
         withLoading: withLoading,

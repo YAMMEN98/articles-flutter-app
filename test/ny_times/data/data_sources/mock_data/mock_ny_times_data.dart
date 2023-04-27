@@ -1,7 +1,8 @@
-import 'package:ny_times_app/src/features/ny_times/data/entities/ny_times_article_response_model.dart';
-import 'package:ny_times_app/src/features/ny_times/data/entities/ny_times_model.dart';
 
-ApiResponse<List<NyTimesModel>> mockNyTimesEmptyListData = ApiResponse(
+import 'package:ny_times_app/src/features/ny_times_articles/data/entities/ny_times_article_response_model.dart';
+import 'package:ny_times_app/src/features/ny_times_articles/data/entities/ny_times_articles_model.dart';
+
+ApiResponse<List<NyTimesArticlesModel>> mockNyTimesEmptyListData = ApiResponse(
   status: "OK",
   copyright:
       "Copyright (c) 2023 The New York Times Company.  All Rights Reserved.",
@@ -9,13 +10,13 @@ ApiResponse<List<NyTimesModel>> mockNyTimesEmptyListData = ApiResponse(
   results: [],
 );
 
-ApiResponse<List<NyTimesModel>> mockNyTimesListData = ApiResponse(
+ApiResponse<List<NyTimesArticlesModel>> mockNyTimesListData = ApiResponse(
   status: "OK",
   copyright:
       "Copyright (c) 2023 The New York Times Company.  All Rights Reserved.",
   numResults: 20,
   results: [
-    NyTimesModel(
+    NyTimesArticlesModel(
       id: 100000008872080,
     ),
   ],

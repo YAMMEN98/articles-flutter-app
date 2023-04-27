@@ -5,10 +5,10 @@ import 'package:ny_times_app/src/core/common_feature/presentation/widgets/cached
 import 'package:ny_times_app/src/core/styles/app_colors.dart';
 import 'package:ny_times_app/src/core/util/constant/app_constants.dart';
 import 'package:ny_times_app/src/core/util/helper.dart';
-import 'package:ny_times_app/src/features/ny_times/data/entities/ny_times_model.dart';
+import 'package:ny_times_app/src/features/ny_times_articles/data/entities/ny_times_articles_model.dart';
 
 class ArticleCardWidget extends StatefulWidget {
-  final NyTimesModel nyTimesModel;
+  final NyTimesArticlesModel nyTimesModel;
 
   const ArticleCardWidget({Key? key, required this.nyTimesModel})
       : super(key: key);

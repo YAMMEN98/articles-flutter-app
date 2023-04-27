@@ -1,5 +1,3 @@
-import 'package:ny_times_app/src/features/ny_times/data/entities/ny_times_article_response_model.dart';
-import 'package:ny_times_app/src/features/ny_times/data/entities/ny_times_model.dart';
 
 Map<String, dynamic> mockNyTimesEmptyJson = {
   "status": "OK",

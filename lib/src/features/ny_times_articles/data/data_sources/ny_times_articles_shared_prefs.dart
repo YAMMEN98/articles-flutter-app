@@ -1,9 +1,9 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
-class NyTimesSharedPrefs {
+class NyTimesArticlesSharedPrefs {
   final SharedPreferences _preferences;
 
-  NyTimesSharedPrefs(this._preferences);
+  NyTimesArticlesSharedPrefs(this._preferences);
 
 
 

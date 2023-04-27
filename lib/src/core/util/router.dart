@@ -2,8 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ny_times_app/src/core/common_feature/presentation/pages/photo_view_page.dart';
 import 'package:ny_times_app/src/core/common_feature/presentation/pages/web_view_page.dart';
-import 'package:ny_times_app/src/core/util/helper.dart';
-import 'package:ny_times_app/src/features/ny_times/presentation/pages/ny_times_page.dart';
+import 'package:ny_times_app/src/features/ny_times_articles/presentation/pages/ny_times_articles_page.dart';
 import 'package:photo_view/photo_view.dart';
 
 class AppRouter {
@@ -16,7 +15,7 @@ class AppRouter {
       case '/ny_times_page':
         return CupertinoPageRoute(
           settings: RouteSettings(name: settings.name),
-          builder: (_) => const NyTimesPage(),
+          builder: (_) => const NyTimesArticlesPage(),
         );
 
 

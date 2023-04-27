@@ -2,54 +2,54 @@ import 'package:bloc/bloc.dart';
 import 'package:ny_times_app/src/core/network/error/failures.dart';
 import 'package:ny_times_app/src/core/util/constant/app_constants.dart';
 import 'package:ny_times_app/src/core/util/injections.dart';
-import 'package:ny_times_app/src/features/ny_times/data/entities/ny_times_model.dart';
-import 'package:ny_times_app/src/features/ny_times/domain/usecases/ny_times_usecase.dart';
+import 'package:ny_times_app/src/features/ny_times_articles/data/entities/ny_times_articles_model.dart';
+import 'package:ny_times_app/src/features/ny_times_articles/domain/usecases/ny_times_articles_usecase.dart';
 
-part 'ny_times_event.dart';
+part 'ny_times_articles_event.dart';
 
-part 'ny_times_state.dart';
+part 'ny_times_articles_state.dart';
 
-class NyTimesBloc extends Bloc<NyTimesEvent, NyTimesState> {
-  late NyTimesUseCase nyTimesUseCase;
+class NyTimesArticlesBloc extends Bloc<NyTimesArticlesEvent, NyTimesArticlesState> {
+  late NyTimesArticlesUseCase nyTimesUseCase;
 
   // List of ny times articles
-  List<NyTimesModel> allArticles = [];
+  List<NyTimesArticlesModel> allArticles = [];
 
-  NyTimesBloc() : super(LoadingGetNyTimesDataState()) {
-    nyTimesUseCase = sl<NyTimesUseCase>();
+  NyTimesArticlesBloc() : super(LoadingGetNyTimesArticlesState()) {
+    nyTimesUseCase = sl<NyTimesArticlesUseCase>();
 
-    on<OnGettingNyTimesEvent>(_onGettingNyTimesEvent);
-    on<OnSearchingEvent>(_onSearchingEvent);
+    on<OnGettingNyTimesArticlesEvent>(_onGettingNyTimesEvent);
+    on<OnSearchingArticlesEvent>(_onSearchingEvent);
   }
 
   // Getting ny times event
   _onGettingNyTimesEvent(
-      OnGettingNyTimesEvent event, Emitter<NyTimesState> emitter) async {
+      OnGettingNyTimesArticlesEvent event, Emitter<NyTimesArticlesState> emitter) async {
     if (event.withLoading) {
-      emitter(LoadingGetNyTimesDataState());
+      emitter(LoadingGetNyTimesArticlesState());
     }
 
     final result = await nyTimesUseCase.call(
-      NyTimesParams(
+      NyTimesArticlesParams(
         period: event.period,
       ),
     );
     result.fold((l) {
       if (l is CancelTokenFailure) {
-        emitter(LoadingGetNyTimesDataState());
+        emitter(LoadingGetNyTimesArticlesState());
       } else {
-        emitter(ErrorGetNyTimesDataState(l.errorMessage));
+        emitter(ErrorGetNyTimesArticlesState(l.errorMessage));
       }
     }, (r) {
       // Return list of articles with filtered by search text
       allArticles = r;
-      emitter(SuccessGetNyTimesDataState(_runFilter(event.text)));
+      emitter(SuccessGetNyTimesArticlesState(_runFilter(event.text)));
     });
   }
 
   // Searching event
   _onSearchingEvent(
-      OnSearchingEvent event, Emitter<NyTimesState> emitter) async {
+      OnSearchingArticlesEvent event, Emitter<NyTimesArticlesState> emitter) async {
     emitter(
       SearchingState(
         _runFilter(event.text),
@@ -58,10 +58,10 @@ class NyTimesBloc extends Bloc<NyTimesEvent, NyTimesState> {
   }
 
   // This function is called whenever the text field changes
-  List<NyTimesModel> _runFilter(
+  List<NyTimesArticlesModel> _runFilter(
     String text,
   ) {
-    List<NyTimesModel> results = [];
+    List<NyTimesArticlesModel> results = [];
     if (text.isEmpty) {
       // if the search field is empty or only contains white-space, we'll display all users
       results = List.from(allArticles);
