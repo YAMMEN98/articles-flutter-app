@@ -18,7 +18,8 @@ class ArticleCardWidget extends StatefulWidget {
 }
 
 class _ArticleCardWidgetState extends State<ArticleCardWidget> {
-  String? imageUrl;
+  String? smallImageUrl;
+  String? bigImageUrl;
 
   @override
   void initState() {
@@ -27,6 +28,7 @@ class _ArticleCardWidgetState extends State<ArticleCardWidget> {
 
   @override
   Widget build(BuildContext context) {
+    // Small image for list item
     // Check if somethings happened and do not return media
     // If everything seems to be in order we will display the image
     // else display solid circle instead
@@ -34,7 +36,19 @@ class _ArticleCardWidgetState extends State<ArticleCardWidget> {
         widget.nyTimesModel.media!.isNotEmpty) {
       if (widget.nyTimesModel.media!.first.mediaMetadata != null &&
           widget.nyTimesModel.media!.first.mediaMetadata!.isNotEmpty) {
-        imageUrl = widget.nyTimesModel.media!.first.mediaMetadata!.first.url;
+        smallImageUrl = widget.nyTimesModel.media!.first.mediaMetadata!.first.url;
+      }
+    }
+
+    // Small image for view and zoom it
+    // Check if somethings happened and do not return media
+    // If everything seems to be in order we will display the image
+    // else display solid circle instead
+    if (widget.nyTimesModel.media != null &&
+        widget.nyTimesModel.media!.isNotEmpty) {
+      if (widget.nyTimesModel.media!.last.mediaMetadata != null &&
+          widget.nyTimesModel.media!.last.mediaMetadata!.isNotEmpty) {
+        bigImageUrl = widget.nyTimesModel.media!.last.mediaMetadata!.last.url;
       }
     }
     return Padding(
@@ -43,12 +57,27 @@ class _ArticleCardWidgetState extends State<ArticleCardWidget> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           // Circle Avatar
-          if (imageUrl != null) ...{
-            CachedImageWidget(
-              imageUrl: imageUrl!,
-              radius: 200,
-              width: 70.sp,
-            ),
+          if (smallImageUrl != null) ...{
+            Hero(
+              tag: bigImageUrl!,
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(
+                    context,
+                    "/photo_view_page",
+                    arguments: {
+                      "path": bigImageUrl!,
+                      "fromNet": true,
+                    },
+                  );
+                },
+                child: CachedImageWidget(
+                  imageUrl: smallImageUrl!,
+                  radius: 200,
+                  width: 70.sp,
+                ),
+              ),
+            )
           } else ...{
             SizedBox(
               width: 70.sp,

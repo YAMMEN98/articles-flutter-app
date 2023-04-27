@@ -97,6 +97,9 @@ dependencies:
   # Web view
   webview_flutter: ^4.2.0
 
+  # Photo view to view image and control it
+  photo_view: ^0.14.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
