@@ -8,9 +8,9 @@ import 'package:ny_times_app/src/features/ny_times_articles/data/data_sources/ny
 import 'package:ny_times_app/src/features/ny_times_articles/data/entities/ny_times_articles_model.dart';
 import 'package:ny_times_app/src/features/ny_times_articles/domain/usecases/ny_times_articles_usecase.dart';
 
-import 'mock_data/mock_ny_times_data.dart';
-import 'mock_data/mock_ny_times_json.dart';
-import 'ny_times_api_test.mocks.dart';
+import 'mock_data/mock_ny_times_article_data.dart';
+import 'mock_data/mock_ny_times_article_json.dart';
+import 'ny_times_articles_api_test.mocks.dart';
 
 @GenerateMocks([Dio, HttpClientAdapter])
 void main() {
@@ -25,19 +25,10 @@ void main() {
     nyTimesApi = NyTimesArticlesApi(mockDio);
   });
 
-  List<NyTimesArticlesModel> mockArticles = [
-    NyTimesArticlesModel(title: "Title"),
-  ];
+  RequestOptions requestOptions = RequestOptions();
 
-  RequestOptions requestOptions = RequestOptions(
-      path: getNyTimeArticle(nyTimesParams.period),
-      method: 'GET',
-      responseType: ResponseType.json);
-
-  group("Test articles_api", () {
+  group("Test ny_times_articles_api", () {
     test("Get All Articles Failed Case", () async {
-      print(requestOptions.path);
-
       when(mockDio.get(
         getNyTimeArticle(
           nyTimesParams.period,
@@ -51,9 +42,8 @@ void main() {
       } catch (e) {
         result = e;
       }
-      expect(result, ServerException("UnKnow Error", 400));
+      expect(result, ServerException("Unknown Error", 400));
     });
-
 
 
     test("Get All Articles Empty Case", () async {

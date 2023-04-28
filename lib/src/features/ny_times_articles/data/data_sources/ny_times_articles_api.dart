@@ -19,27 +19,26 @@ class NyTimesArticlesApi {
   NyTimesArticlesApi(this.dio);
 
   /// NyTimes method
-  Future< ApiResponse<List<NyTimesArticlesModel>>> getNyTimesData(
+  Future<ApiResponse<List<NyTimesArticlesModel>>> getNyTimesData(
       NyTimesArticlesParams params) async {
     try {
       final result = (await dio.get(
         getNyTimeArticle(params.period),
-      ))
-          ;
-      if(result.data==null)
-        throw ServerException("UnKnow Error", result.statusCode);
+      ));
+      if (result.data == null)
+        throw ServerException("Unknown Error", result.statusCode);
 
-      return ApiResponse.fromJson<List<NyTimesArticlesModel>>(result.data, NyTimesArticlesModel.fromJsonList);
+      return ApiResponse.fromJson<List<NyTimesArticlesModel>>(
+          result.data, NyTimesArticlesModel.fromJsonList);
     } on DioError catch (e) {
       if (e.type == DioErrorType.cancel) {
         throw CancelTokenException(handleDioError(e), e.response?.statusCode);
       } else {
         throw ServerException(handleDioError(e), e.response?.statusCode);
       }
-    } on ServerException catch (e){
-      rethrow ;
-    }
-    catch (e) {
+    } on ServerException catch (e) {
+      rethrow;
+    } catch (e) {
       throw ServerException(e.toString(), null);
     }
   }

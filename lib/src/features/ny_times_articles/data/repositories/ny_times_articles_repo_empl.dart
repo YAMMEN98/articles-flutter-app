@@ -10,9 +10,8 @@ import 'package:ny_times_app/src/features/ny_times_articles/domain/usecases/ny_t
 
 class NyTimesArticlesRepositoryImpl extends NyTimesArticlesRepository {
   final NyTimesArticlesApi nyTimesApi;
-  final NyTimesArticlesSharedPrefs nyTimesPrefs;
 
-  NyTimesArticlesRepositoryImpl(this.nyTimesApi, this.nyTimesPrefs);
+  NyTimesArticlesRepositoryImpl(this.nyTimesApi, );
 
   // Gent Ny Times Articles
   @override
