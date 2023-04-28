@@ -25,6 +25,7 @@ Articles, display article details, and see more about details from url.
 - Display article details.
 - Apply Dark/Light theme.
 - Apply localization en/ar languages.
+- View Image And Zoom It.
 - Create a lane to generate apk automatically when upload code to the main branch.
 
 ![Text Coverage](https://github.com/YAMMEN98/ny-times-flutter-app/blob/main/actions.png)
