@@ -21,7 +21,7 @@ class CachedImageWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: BorderRadius.circular(radius??0),
+      borderRadius: BorderRadius.circular(radius ?? 0),
       child: Container(
           decoration: radius == null
               ? null

@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+
 part 'media_meta_data_model.g.dart';
 
 @JsonSerializable(fieldRename: FieldRename.snake)
@@ -10,7 +11,8 @@ class MediaMetaDataModel {
 
   MediaMetaDataModel({this.url, this.format, this.height, this.width});
 
-  factory MediaMetaDataModel.fromJson(json) => _$MediaMetaDataModelFromJson(json);
+  factory MediaMetaDataModel.fromJson(json) =>
+      _$MediaMetaDataModelFromJson(json);
 
   toJson() => _$MediaMetaDataModelToJson(this);
 

@@ -27,15 +27,12 @@ class SuccessGetNyTimesArticlesState extends NyTimesArticlesState {
 
 // --------------------End NyTimes States-------------------- //
 
-
-
 // --------------------Start Searching States-------------------- //
 
 class SearchingState extends NyTimesArticlesState {
   final List<NyTimesArticlesModel> nyTimesArticles;
 
   SearchingState(this.nyTimesArticles);
-
 }
 
 // --------------------End Searching States-------------------- //

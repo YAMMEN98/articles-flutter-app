@@ -1,10 +1,6 @@
-import 'package:dartz/dartz.dart';
-import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:ny_times_app/src/core/network/error/exceptions.dart';
-import 'package:ny_times_app/src/core/util/constant/network_constant.dart';
 import 'package:ny_times_app/src/features/ny_times_articles/data/data_sources/ny_times_articles_api.dart';
 import 'package:ny_times_app/src/features/ny_times_articles/data/entities/ny_times_article_response_model.dart';
 import 'package:ny_times_app/src/features/ny_times_articles/data/entities/ny_times_articles_model.dart';
@@ -40,8 +36,8 @@ void main() {
       });
       var result;
       try {
-        result =
-            await nyTimesArticlesRepositoryImpl.getNyTimesData(nyTimesParams);
+        result = await nyTimesArticlesRepositoryImpl
+            .getNyTimesArticles(nyTimesParams);
       } catch (e) {
         result = e;
       }
@@ -68,8 +64,8 @@ void main() {
       });
       var result;
       try {
-        result =
-            await nyTimesArticlesRepositoryImpl.getNyTimesData(nyTimesParams);
+        result = await nyTimesArticlesRepositoryImpl
+            .getNyTimesArticles(nyTimesParams);
       } catch (e) {
         result = e;
       }

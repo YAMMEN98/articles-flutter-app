@@ -1,4 +1,3 @@
-
 /// Exception occur when server failure
 class ServerException implements Exception {
   final String message;
@@ -14,7 +13,7 @@ class ServerException implements Exception {
     if (other.runtimeType != runtimeType) {
       return false;
     }
-    if(other is ServerException) {
+    if (other is ServerException) {
       return other.message == message && other.statusCode == statusCode;
     }
 

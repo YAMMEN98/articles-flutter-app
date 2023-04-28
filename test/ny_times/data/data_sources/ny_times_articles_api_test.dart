@@ -5,7 +5,6 @@ import 'package:mockito/mockito.dart';
 import 'package:ny_times_app/src/core/network/error/exceptions.dart';
 import 'package:ny_times_app/src/core/util/constant/network_constant.dart';
 import 'package:ny_times_app/src/features/ny_times_articles/data/data_sources/ny_times_articles_api.dart';
-import 'package:ny_times_app/src/features/ny_times_articles/data/entities/ny_times_articles_model.dart';
 import 'package:ny_times_app/src/features/ny_times_articles/domain/usecases/ny_times_articles_usecase.dart';
 
 import 'mock_data/mock_ny_times_article_data.dart';
@@ -45,7 +44,6 @@ void main() {
       expect(result, ServerException("Unknown Error", 400));
     });
 
-
     test("Get All Articles Empty Case", () async {
       print(requestOptions.path);
 
@@ -54,7 +52,11 @@ void main() {
           nyTimesParams.period,
         ),
       )).thenAnswer((realInvocation) async {
-        return Response(requestOptions: requestOptions, statusCode: 200, data: mockNyTimesEmptyJson,);
+        return Response(
+          requestOptions: requestOptions,
+          statusCode: 200,
+          data: mockNyTimesEmptyJson,
+        );
       });
       var result;
       try {
@@ -66,7 +68,6 @@ void main() {
       expect(result, mockNyTimesEmptyListData);
     });
 
-
     test("Get All Articles Success Case", () async {
       print(requestOptions.path);
 
@@ -75,7 +76,11 @@ void main() {
           nyTimesParams.period,
         ),
       )).thenAnswer((realInvocation) async {
-        return Response(requestOptions: requestOptions, statusCode: 200, data: mockNyTimesListJson,);
+        return Response(
+          requestOptions: requestOptions,
+          statusCode: 200,
+          data: mockNyTimesListJson,
+        );
       });
       var result;
       try {

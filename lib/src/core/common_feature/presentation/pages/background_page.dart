@@ -1,8 +1,5 @@
-import 'package:ny_times_app/src/core/common_feature/presentation/pages/app_drawer_page.dart';
-import 'package:ny_times_app/src/core/styles/app_colors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../util/helper.dart';
+import 'package:ny_times_app/src/core/common_feature/presentation/pages/app_drawer_page.dart';
 
 class BackgroundPage extends StatefulWidget {
   final Widget child;
@@ -61,7 +58,7 @@ class _BackgroundPageState extends State<BackgroundPage> {
       },
       drawer: widget.withDrawer
           ? Drawer(
-        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+              backgroundColor: Theme.of(context).scaffoldBackgroundColor,
               child: AppDrawerPage(),
             )
           : null,

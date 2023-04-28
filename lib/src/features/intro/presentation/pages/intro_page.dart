@@ -1,8 +1,7 @@
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:ny_times_app/src/core/styles/app_colors.dart';
-import 'package:ny_times_app/src/core/util/helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:ny_times_app/src/core/styles/app_colors.dart';
+import 'package:ny_times_app/src/core/util/helper.dart';
 
 class IntroPage extends StatefulWidget {
   const IntroPage({Key? key}) : super(key: key);
@@ -33,7 +32,7 @@ class _IntroPageState extends State<IntroPage> {
           padding: EdgeInsets.all(15.sp),
           child: Image.asset(
             Helper.getImagePath("logo.png"),
-            color: Helper.isDarkTheme()?AppColors.white:null,
+            color: Helper.isDarkTheme() ? AppColors.white : null,
             width: 300.w,
             height: 300.h,
             fit: BoxFit.contain,

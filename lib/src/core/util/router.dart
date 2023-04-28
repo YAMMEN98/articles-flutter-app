@@ -5,7 +5,6 @@ import 'package:ny_times_app/src/core/common_feature/presentation/pages/web_view
 import 'package:ny_times_app/src/features/ny_times_articles/data/entities/ny_times_articles_model.dart';
 import 'package:ny_times_app/src/features/ny_times_articles/presentation/pages/ny_times_article_details_page.dart';
 import 'package:ny_times_app/src/features/ny_times_articles/presentation/pages/ny_times_articles_page.dart';
-import 'package:photo_view/photo_view.dart';
 
 class AppRouter {
   static String currentRoute = "/";

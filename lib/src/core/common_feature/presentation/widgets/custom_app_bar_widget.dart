@@ -22,21 +22,17 @@ class CustomAppBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: height??60.h,
-      padding: EdgeInsets.symmetric(
-        horizontal: 20.w,
-        vertical: 0.h
-      ),
+      height: height ?? 60.h,
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 0.h),
       decoration: BoxDecoration(
-          color: backgroundColor??Theme.of(context).scaffoldBackgroundColor,
+          color: backgroundColor ?? Theme.of(context).scaffoldBackgroundColor,
           boxShadow: [
-        BoxShadow(
-          color: AppColors.darkGray.withOpacity(0.1),
-          spreadRadius: 0,
-          blurRadius: 4,
-          offset: Offset(0, 4)
-        )
-      ]),
+            BoxShadow(
+                color: AppColors.darkGray.withOpacity(0.1),
+                spreadRadius: 0,
+                blurRadius: 4,
+                offset: Offset(0, 4))
+          ]),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,

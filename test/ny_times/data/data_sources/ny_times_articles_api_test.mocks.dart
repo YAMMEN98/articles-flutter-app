@@ -103,6 +103,7 @@ class MockDio extends _i1.Mock implements _i7.Dio {
           Invocation.getter(#options),
         ),
       ) as _i2.BaseOptions);
+
   @override
   set options(_i2.BaseOptions? _options) => super.noSuchMethod(
         Invocation.setter(
@@ -111,6 +112,7 @@ class MockDio extends _i1.Mock implements _i7.Dio {
         ),
         returnValueForMissingStub: null,
       );
+
   @override
   _i3.HttpClientAdapter get httpClientAdapter => (super.noSuchMethod(
         Invocation.getter(#httpClientAdapter),
@@ -119,6 +121,7 @@ class MockDio extends _i1.Mock implements _i7.Dio {
           Invocation.getter(#httpClientAdapter),
         ),
       ) as _i3.HttpClientAdapter);
+
   @override
   set httpClientAdapter(_i3.HttpClientAdapter? _httpClientAdapter) =>
       super.noSuchMethod(
@@ -128,6 +131,7 @@ class MockDio extends _i1.Mock implements _i7.Dio {
         ),
         returnValueForMissingStub: null,
       );
+
   @override
   _i4.Transformer get transformer => (super.noSuchMethod(
         Invocation.getter(#transformer),
@@ -136,6 +140,7 @@ class MockDio extends _i1.Mock implements _i7.Dio {
           Invocation.getter(#transformer),
         ),
       ) as _i4.Transformer);
+
   @override
   set transformer(_i4.Transformer? _transformer) => super.noSuchMethod(
         Invocation.setter(
@@ -144,6 +149,7 @@ class MockDio extends _i1.Mock implements _i7.Dio {
         ),
         returnValueForMissingStub: null,
       );
+
   @override
   _i5.Interceptors get interceptors => (super.noSuchMethod(
         Invocation.getter(#interceptors),
@@ -152,6 +158,7 @@ class MockDio extends _i1.Mock implements _i7.Dio {
           Invocation.getter(#interceptors),
         ),
       ) as _i5.Interceptors);
+
   @override
   void close({bool? force = false}) => super.noSuchMethod(
         Invocation.method(
@@ -161,6 +168,7 @@ class MockDio extends _i1.Mock implements _i7.Dio {
         ),
         returnValueForMissingStub: null,
       );
+
   @override
   _i8.Future<_i6.Response<T>> get<T>(
     String? path, {
@@ -197,6 +205,7 @@ class MockDio extends _i1.Mock implements _i7.Dio {
           ),
         )),
       ) as _i8.Future<_i6.Response<T>>);
+
   @override
   _i8.Future<_i6.Response<T>> getUri<T>(
     Uri? uri, {
@@ -230,6 +239,7 @@ class MockDio extends _i1.Mock implements _i7.Dio {
           ),
         )),
       ) as _i8.Future<_i6.Response<T>>);
+
   @override
   _i8.Future<_i6.Response<T>> post<T>(
     String? path, {
@@ -269,6 +279,7 @@ class MockDio extends _i1.Mock implements _i7.Dio {
           ),
         )),
       ) as _i8.Future<_i6.Response<T>>);
+
   @override
   _i8.Future<_i6.Response<T>> postUri<T>(
     Uri? uri, {
@@ -305,6 +316,7 @@ class MockDio extends _i1.Mock implements _i7.Dio {
           ),
         )),
       ) as _i8.Future<_i6.Response<T>>);
+
   @override
   _i8.Future<_i6.Response<T>> put<T>(
     String? path, {
@@ -344,6 +356,7 @@ class MockDio extends _i1.Mock implements _i7.Dio {
           ),
         )),
       ) as _i8.Future<_i6.Response<T>>);
+
   @override
   _i8.Future<_i6.Response<T>> putUri<T>(
     Uri? uri, {
@@ -380,6 +393,7 @@ class MockDio extends _i1.Mock implements _i7.Dio {
           ),
         )),
       ) as _i8.Future<_i6.Response<T>>);
+
   @override
   _i8.Future<_i6.Response<T>> head<T>(
     String? path, {
@@ -413,6 +427,7 @@ class MockDio extends _i1.Mock implements _i7.Dio {
           ),
         )),
       ) as _i8.Future<_i6.Response<T>>);
+
   @override
   _i8.Future<_i6.Response<T>> headUri<T>(
     Uri? uri, {
@@ -443,6 +458,7 @@ class MockDio extends _i1.Mock implements _i7.Dio {
           ),
         )),
       ) as _i8.Future<_i6.Response<T>>);
+
   @override
   _i8.Future<_i6.Response<T>> delete<T>(
     String? path, {
@@ -476,6 +492,7 @@ class MockDio extends _i1.Mock implements _i7.Dio {
           ),
         )),
       ) as _i8.Future<_i6.Response<T>>);
+
   @override
   _i8.Future<_i6.Response<T>> deleteUri<T>(
     Uri? uri, {
@@ -506,6 +523,7 @@ class MockDio extends _i1.Mock implements _i7.Dio {
           ),
         )),
       ) as _i8.Future<_i6.Response<T>>);
+
   @override
   _i8.Future<_i6.Response<T>> patch<T>(
     String? path, {
@@ -545,6 +563,7 @@ class MockDio extends _i1.Mock implements _i7.Dio {
           ),
         )),
       ) as _i8.Future<_i6.Response<T>>);
+
   @override
   _i8.Future<_i6.Response<T>> patchUri<T>(
     Uri? uri, {
@@ -581,6 +600,7 @@ class MockDio extends _i1.Mock implements _i7.Dio {
           ),
         )),
       ) as _i8.Future<_i6.Response<T>>);
+
   @override
   _i8.Future<_i6.Response<dynamic>> download(
     String? urlPath,
@@ -631,6 +651,7 @@ class MockDio extends _i1.Mock implements _i7.Dio {
           ),
         )),
       ) as _i8.Future<_i6.Response<dynamic>>);
+
   @override
   _i8.Future<_i6.Response<dynamic>> downloadUri(
     Uri? uri,
@@ -678,6 +699,7 @@ class MockDio extends _i1.Mock implements _i7.Dio {
           ),
         )),
       ) as _i8.Future<_i6.Response<dynamic>>);
+
   @override
   _i8.Future<_i6.Response<T>> request<T>(
     String? path, {
@@ -717,6 +739,7 @@ class MockDio extends _i1.Mock implements _i7.Dio {
           ),
         )),
       ) as _i8.Future<_i6.Response<T>>);
+
   @override
   _i8.Future<_i6.Response<T>> requestUri<T>(
     Uri? uri, {
@@ -753,6 +776,7 @@ class MockDio extends _i1.Mock implements _i7.Dio {
           ),
         )),
       ) as _i8.Future<_i6.Response<T>>);
+
   @override
   _i8.Future<_i6.Response<T>> fetch<T>(_i2.RequestOptions? requestOptions) =>
       (super.noSuchMethod(
@@ -805,6 +829,7 @@ class MockHttpClientAdapter extends _i1.Mock implements _i3.HttpClientAdapter {
           ),
         )),
       ) as _i8.Future<_i3.ResponseBody>);
+
   @override
   void close({bool? force = false}) => super.noSuchMethod(
         Invocation.method(

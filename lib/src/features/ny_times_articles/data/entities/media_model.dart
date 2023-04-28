@@ -1,9 +1,9 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:ny_times_app/src/features/ny_times_articles/data/entities/media_meta_data_model.dart';
+
 part 'media_model.g.dart';
 
 @JsonSerializable(fieldRename: FieldRename.snake)
-
 class MediaModel {
   String? type;
   String? subtype;
@@ -15,11 +15,11 @@ class MediaModel {
 
   MediaModel(
       {this.type,
-        this.subtype,
-        this.caption,
-        this.copyright,
-        this.approvedForSyndication,
-        this.mediaMetadata});
+      this.subtype,
+      this.caption,
+      this.copyright,
+      this.approvedForSyndication,
+      this.mediaMetadata});
 
   factory MediaModel.fromJson(json) => _$MediaModelFromJson(json);
 

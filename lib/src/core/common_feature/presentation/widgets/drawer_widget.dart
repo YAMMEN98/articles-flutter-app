@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ny_times_app/main.dart';
 import 'package:ny_times_app/src/core/common_feature/data/data_sources/app_shared_prefs.dart';
 import 'package:ny_times_app/src/core/common_feature/domain/entities/language_enum.dart';
-import 'package:ny_times_app/src/core/styles/app_colors.dart';
 import 'package:ny_times_app/src/core/translations/l10n.dart';
 import 'package:ny_times_app/src/core/util/helper.dart';
 import 'package:ny_times_app/src/core/util/injections.dart';

@@ -1,12 +1,11 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ny_times_app/src/core/common_feature/presentation/pages/background_page.dart';
-import 'package:flutter/material.dart';
 import 'package:ny_times_app/src/core/common_feature/presentation/widgets/app_loader.dart';
 import 'package:ny_times_app/src/core/common_feature/presentation/widgets/custom_app_bar_widget.dart';
 import 'package:ny_times_app/src/core/common_feature/presentation/widgets/reload_widget.dart';
 import 'package:ny_times_app/src/core/common_feature/presentation/widgets/text_field_widget.dart';
-import 'package:ny_times_app/src/core/styles/app_colors.dart';
 import 'package:ny_times_app/src/core/translations/l10n.dart';
 import 'package:ny_times_app/src/core/util/helper.dart';
 import 'package:ny_times_app/src/features/ny_times_articles/data/entities/ny_times_articles_model.dart';
@@ -144,11 +143,9 @@ class _NyTimesArticlesPageState extends State<NyTimesArticlesPage> {
                       S.of(context).period,
                       style: Theme.of(context).textTheme.bodyLarge,
                     ),
-
                     SizedBox(
                       width: 1.sp,
                     ),
-
                     Icon(
                       Icons.arrow_drop_down,
                       size: 20,
@@ -171,13 +168,11 @@ class _NyTimesArticlesPageState extends State<NyTimesArticlesPage> {
                             "1",
                             style: Theme.of(context).textTheme.titleMedium,
                           ),
-
-                          if(selectedPeriod == 1)...{
+                          if (selectedPeriod == 1) ...{
                             Icon(
                               Icons.check,
                               color: Theme.of(context).iconTheme.color,
                               size: 20,
-
                             ),
                           }
                         ],
@@ -192,13 +187,11 @@ class _NyTimesArticlesPageState extends State<NyTimesArticlesPage> {
                             "7",
                             style: Theme.of(context).textTheme.titleMedium,
                           ),
-
-                          if(selectedPeriod == 7)...{
+                          if (selectedPeriod == 7) ...{
                             Icon(
                               Icons.check,
                               color: Theme.of(context).iconTheme.color,
                               size: 20,
-
                             ),
                           }
                         ],
@@ -213,8 +206,7 @@ class _NyTimesArticlesPageState extends State<NyTimesArticlesPage> {
                             "30",
                             style: Theme.of(context).textTheme.titleMedium,
                           ),
-
-                          if(selectedPeriod == 30)...{
+                          if (selectedPeriod == 30) ...{
                             Icon(
                               Icons.check,
                               color: Theme.of(context).iconTheme.color,
@@ -265,7 +257,7 @@ class _NyTimesArticlesPageState extends State<NyTimesArticlesPage> {
                 }
 
                 // Check if there is no data
-                if(nyTimesArticles.isEmpty){
+                if (nyTimesArticles.isEmpty) {
                   return ReloadWidget.empty(content: S.of(context).no_data);
                 }
 

@@ -9,14 +9,16 @@ class OnGettingNyTimesArticlesEvent extends NyTimesArticlesEvent {
   final String text;
   final int period;
   final bool withLoading;
-  OnGettingNyTimesArticlesEvent(this.text,this.period, {this.withLoading = true});
+
+  OnGettingNyTimesArticlesEvent(this.text, this.period,
+      {this.withLoading = true});
 }
 
 // On searching Event
 class OnSearchingArticlesEvent extends NyTimesArticlesEvent {
   final String text;
 
-  OnSearchingArticlesEvent(this.text, );
+  OnSearchingArticlesEvent(
+    this.text,
+  );
 }
-
-

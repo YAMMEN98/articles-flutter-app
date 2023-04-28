@@ -2,17 +2,15 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ny_times_app/src/core/common_feature/presentation/pages/background_page.dart';
-import 'package:ny_times_app/src/core/common_feature/presentation/widgets/app_loader.dart';
 import 'package:ny_times_app/src/core/common_feature/presentation/widgets/arrow_back_button_widget.dart';
-import 'package:ny_times_app/src/core/common_feature/presentation/widgets/cached_image_widget.dart';
 import 'package:photo_view/photo_view.dart';
-import 'package:webview_flutter/webview_flutter.dart';
 
 class PhotoViewPage extends StatefulWidget {
   final String path;
   final bool fromNet;
 
-  const PhotoViewPage({Key? key, required this.path, required this.fromNet}) : super(key: key);
+  const PhotoViewPage({Key? key, required this.path, required this.fromNet})
+      : super(key: key);
 
   @override
   State<PhotoViewPage> createState() => _PhotoViewPageState();
@@ -58,7 +56,7 @@ class _PhotoViewPageState extends State<PhotoViewPage> {
   // Build photo view from asset or url
   Widget _buildPhotoView() {
     // Path is url from net
-    if(widget.fromNet){
+    if (widget.fromNet) {
       return Hero(
         tag: widget.path,
         child: PhotoView(
@@ -67,7 +65,7 @@ class _PhotoViewPageState extends State<PhotoViewPage> {
           ),
         ),
       );
-    }else{
+    } else {
       // Path is path from asset
       return Hero(
         tag: widget.path,

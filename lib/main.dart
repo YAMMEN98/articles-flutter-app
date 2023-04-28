@@ -1,5 +1,4 @@
 import 'package:device_preview/device_preview.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -11,9 +10,9 @@ import 'package:ny_times_app/src/core/util/helper.dart';
 import 'package:ny_times_app/src/core/util/injections.dart';
 import 'package:ny_times_app/src/core/util/router.dart';
 import 'package:ny_times_app/src/features/intro/presentation/pages/intro_page.dart';
+import 'package:provider/provider.dart';
 
 import 'src/core/common_feature/domain/entities/language_enum.dart';
-import 'package:provider/provider.dart';
 
 final navigatorKey = GlobalKey<NavigatorState>();
 
@@ -25,7 +24,7 @@ void main() async {
     builder: (context) {
       return const App();
     },
-    enabled: kReleaseMode,
+    enabled: false,
   ));
 
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
@@ -85,7 +84,7 @@ class _AppState extends State<App> with WidgetsBindingObserver {
             builder: (context, child) {
               return MaterialApp(
                 useInheritedMediaQuery: false,
-                title: 'Ny Times App',
+                title: 'Ny Times Articles App',
                 scaffoldMessengerKey: snackbarKey,
                 onGenerateRoute: AppRouter.generateRoute,
                 theme: Helper.isDarkTheme() ? darkAppTheme : appTheme,

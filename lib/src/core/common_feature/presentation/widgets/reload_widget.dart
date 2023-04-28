@@ -10,14 +10,14 @@ class ReloadWidget extends StatelessWidget {
   final String image;
   final Color? iconColor;
 
-   ReloadWidget.empty({
+  ReloadWidget.empty({
     Key? key,
     required this.content,
     this.onPressed,
     this.iconColor,
-  })  : image = Helper.isDarkTheme()?
-  "assets/svg_images/no_data_light.svg":
-  "assets/svg_images/no_data_dark.svg",
+  })  : image = Helper.isDarkTheme()
+            ? "assets/svg_images/no_data_dark.svg"
+            : "assets/svg_images/no_data_light.svg",
         super(key: key);
 
   const ReloadWidget.error({

@@ -1,6 +1,6 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ny_times_app/src/core/common_feature/presentation/pages/background_page.dart';
-import 'package:flutter/material.dart';
 import 'package:ny_times_app/src/core/common_feature/presentation/widgets/arrow_back_button_widget.dart';
 import 'package:ny_times_app/src/core/common_feature/presentation/widgets/cached_image_widget.dart';
 import 'package:ny_times_app/src/core/common_feature/presentation/widgets/custom_app_bar_widget.dart';
@@ -49,10 +49,10 @@ class _NyTimesArticlesPageState extends State<NyTimesArticleDetailsPage> {
           // Custom App Bar
           CustomAppBarWidget(
             title: Text(
-              "${S.of(context).article_details} - ${widget.model.section??defaultStr}",
+              "${S.of(context).article_details} - ${widget.model.section ?? defaultStr}",
               style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                fontWeight: FontWeight.bold,
-              ),
+                    fontWeight: FontWeight.bold,
+                  ),
             ),
             leading: ArrowBackButtonWidget(),
           ),
@@ -63,98 +63,98 @@ class _NyTimesArticlesPageState extends State<NyTimesArticleDetailsPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-
                   // Title, abstract attribute and published date
                   Padding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 12.w,
-                    ),
-                    child:  Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        SizedBox(
-                          height: Helper.getHorizontalSpace(),
-                        ),
-
-                        // Title
-                        Text(
-                          widget.model.title??defaultStr,
-                          style: Theme.of(context).textTheme.headlineLarge!.copyWith(
-                            fontStyle: FontStyle.italic,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 30
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 12.w,
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          SizedBox(
+                            height: Helper.getHorizontalSpace(),
                           ),
-                        ),
 
-                        // Space
-                        SizedBox(
-                          height: Helper.getHorizontalSpace()/2,
-                        ),
-
-                        // Title
-                        Text(
-                          widget.model.abstract??defaultStr,
-                          style: Theme.of(context).textTheme.bodyLarge,
-                        ),
-
-                        // Space
-                        SizedBox(
-                          height: Helper.getHorizontalSpace()*2,
-                        ),
-
-                        // Caption
-                        Text(
-                          widget.model.byline??defaultStr,
-                          style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                            fontWeight: FontWeight.bold,
+                          // Title
+                          Text(
+                            widget.model.title ?? defaultStr,
+                            style: Theme.of(context)
+                                .textTheme
+                                .headlineLarge!
+                                .copyWith(
+                                    fontStyle: FontStyle.italic,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 30),
                           ),
-                          textAlign: TextAlign.start,
-                        ),
 
-                        // Space
-                        SizedBox(
-                          height: 3.h,
-                        ),
+                          // Space
+                          SizedBox(
+                            height: Helper.getHorizontalSpace() / 2,
+                          ),
 
-                        // Published Date
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Icon(
-                              Icons.calendar_today_outlined,
-                              size: 15,
-                              color: AppColors.gray,
-                            ),
-                            SizedBox(
-                              width: 5.w,
-                            ),
-                            Flexible(
-                              child: Text(
-                                widget.model.publishedDate ?? defaultStr,
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .titleSmall!
-                                    .copyWith(color: AppColors.darkGray),
-                                textAlign: TextAlign.end,
+                          // Title
+                          Text(
+                            widget.model.abstract ?? defaultStr,
+                            style: Theme.of(context).textTheme.bodyLarge,
+                          ),
+
+                          // Space
+                          SizedBox(
+                            height: Helper.getHorizontalSpace() * 2,
+                          ),
+
+                          // Caption
+                          Text(
+                            widget.model.byline ?? defaultStr,
+                            style:
+                                Theme.of(context).textTheme.bodyLarge!.copyWith(
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                            textAlign: TextAlign.start,
+                          ),
+
+                          // Space
+                          SizedBox(
+                            height: 3.h,
+                          ),
+
+                          // Published Date
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Icon(
+                                Icons.calendar_today_outlined,
+                                size: 15,
+                                color: AppColors.gray,
                               ),
-                            ),
-                          ],
-                        ),
+                              SizedBox(
+                                width: 5.w,
+                              ),
+                              Flexible(
+                                child: Text(
+                                  widget.model.publishedDate ?? defaultStr,
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .titleSmall!
+                                      .copyWith(color: AppColors.darkGray),
+                                  textAlign: TextAlign.end,
+                                ),
+                              ),
+                            ],
+                          ),
 
-                        // Space
-                        SizedBox(
-                          height: Helper.getHorizontalSpace(),
-                        ),
-
-                      ],
-                    )
-                  ),
+                          // Space
+                          SizedBox(
+                            height: Helper.getHorizontalSpace(),
+                          ),
+                        ],
+                      )),
 
                   // Image
                   GestureDetector(
-                    onTap: (){
-                      if(imageUrl!=null){
+                    onTap: () {
+                      if (imageUrl != null) {
                         // display image if it is available
                         Navigator.pushNamed(
                           context,
@@ -168,15 +168,14 @@ class _NyTimesArticlesPageState extends State<NyTimesArticleDetailsPage> {
                     },
                     child: Stack(
                       children: [
-                          Hero(
-                            tag: imageUrl??defaultStr,
-                            child: CachedImageWidget(
-                              imageUrl: imageUrl??defaultStr,
-                              height: ScreenUtil().screenHeight * 0.4,
-                              width: ScreenUtil().screenWidth,
-                            ),
+                        Hero(
+                          tag: imageUrl ?? defaultStr,
+                          child: CachedImageWidget(
+                            imageUrl: imageUrl ?? defaultStr,
+                            height: ScreenUtil().screenHeight * 0.4,
+                            width: ScreenUtil().screenWidth,
                           ),
-
+                        ),
 
                         // Shadow
                         Positioned.fill(
@@ -195,20 +194,21 @@ class _NyTimesArticlesPageState extends State<NyTimesArticleDetailsPage> {
                           ),
                         ),
 
-
                         // Caption
                         // Display Caption when image not valid
-                        if(imageUrl==null)
-                        Positioned(
-                          bottom: 10.h,
-                          left: 10.w,
-                          right:  10.w,
-                          child: Text(
-                            imageCaption??defaultStr,
-                            style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                        if (imageUrl == null)
+                          Positioned(
+                            bottom: 10.h,
+                            left: 10.w,
+                            right: 10.w,
+                            child: Text(
+                              imageCaption ?? defaultStr,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyLarge!
+                                  .copyWith(),
                             ),
                           ),
-                        ),
                       ],
                     ),
                   ),
@@ -218,7 +218,7 @@ class _NyTimesArticlesPageState extends State<NyTimesArticleDetailsPage> {
                       padding: EdgeInsets.symmetric(
                         horizontal: 12.w,
                       ),
-                      child:  Column(
+                      child: Column(
                         children: [
                           SizedBox(
                             height: Helper.getHorizontalSpace(),
@@ -226,21 +226,21 @@ class _NyTimesArticlesPageState extends State<NyTimesArticleDetailsPage> {
 
                           // Adx keywords
                           Text(
-                            widget.model.adxKeywords??defaultStr,
-                            style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                                wordSpacing: 3,
-                                letterSpacing: 1
-                            ),
+                            widget.model.adxKeywords ?? defaultStr,
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyLarge!
+                                .copyWith(wordSpacing: 3, letterSpacing: 1),
                           ),
 
                           // Space
                           SizedBox(
-                            height: Helper.getHorizontalSpace()*3,
+                            height: Helper.getHorizontalSpace() * 3,
                           ),
 
                           // See more
                           GestureDetector(
-                            onTap: (){
+                            onTap: () {
                               Navigator.pushNamed(
                                 context,
                                 "/web_view_page",
@@ -251,19 +251,20 @@ class _NyTimesArticlesPageState extends State<NyTimesArticleDetailsPage> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                 S.of(context).see_more,
-                                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                                      wordSpacing: 3,
-                                      letterSpacing: 1,
-                                    fontWeight: FontWeight.bold,
-                                    decoration: TextDecoration.underline,
-                                  ),
+                                  S.of(context).see_more,
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .bodyLarge!
+                                      .copyWith(
+                                        wordSpacing: 3,
+                                        letterSpacing: 1,
+                                        fontWeight: FontWeight.bold,
+                                        decoration: TextDecoration.underline,
+                                      ),
                                 ),
-
                                 SizedBox(
                                   width: 3.w,
                                 ),
-
                                 Icon(
                                   Icons.arrow_forward_ios_rounded,
                                   size: 15,
@@ -277,8 +278,7 @@ class _NyTimesArticlesPageState extends State<NyTimesArticleDetailsPage> {
                             height: Helper.getHorizontalSpace(),
                           ),
                         ],
-                      )
-                  ),
+                      )),
                 ],
               ),
             ),

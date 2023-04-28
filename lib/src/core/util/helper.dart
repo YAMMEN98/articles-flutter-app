@@ -34,8 +34,6 @@ class Helper {
     return 10.w;
   }
 
-
-
   /// Get Dio Header
   static Map<String, dynamic> getHeaders() {
     return {}..removeWhere((key, value) => value == null);
@@ -44,5 +42,4 @@ class Helper {
   static bool isDarkTheme() {
     return sl<AppSharedPrefs>().getIsDarkTheme();
   }
-
 }

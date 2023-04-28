@@ -75,6 +75,7 @@ class MockNyTimesArticlesApi extends _i1.Mock
           Invocation.getter(#dio),
         ),
       ) as _i2.Dio);
+
   @override
   _i2.CancelToken get cancelToken => (super.noSuchMethod(
         Invocation.getter(#cancelToken),
@@ -83,6 +84,7 @@ class MockNyTimesArticlesApi extends _i1.Mock
           Invocation.getter(#cancelToken),
         ),
       ) as _i2.CancelToken);
+
   @override
   set cancelToken(_i2.CancelToken? _cancelToken) => super.noSuchMethod(
         Invocation.setter(
@@ -91,6 +93,7 @@ class MockNyTimesArticlesApi extends _i1.Mock
         ),
         returnValueForMissingStub: null,
       );
+
   @override
   _i5.Future<_i3.ApiResponse<List<_i6.NyTimesArticlesModel>>> getNyTimesData(
           _i7.NyTimesArticlesParams? params) =>

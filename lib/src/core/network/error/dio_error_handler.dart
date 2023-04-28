@@ -25,7 +25,8 @@ String handleDioError(DioError error) {
           if (error.response?.statusCode == 200 &&
               ("${(error.response?.data["statusCode"] ?? "0")}" != "0")) {
             if ((error.response?.data['fault']['faultstring'] ?? "") != "") {
-              errorDescription = (error.response?.data['fault']['faultstring'] ?? "");
+              errorDescription =
+                  (error.response?.data['fault']['faultstring'] ?? "");
             } else {
               errorDescription = "Unknown Error";
             }
@@ -34,7 +35,8 @@ String handleDioError(DioError error) {
                     error.response?.data["data"]["validations"] != null)
                 ? error.response?.data["data"]["validations"].values.first[0]
                 : error.response?.data["errors"] == null
-                    ? error.response?.data['fault']['faultstring'] ?? "Unknown Error"
+                    ? error.response?.data['fault']['faultstring'] ??
+                        "Unknown Error"
                     : error.response?.data["errors"].values.first[0] ??
                         error.response?.data['fault']['faultstring'] ??
                         "Unknown Error";
@@ -49,11 +51,13 @@ String handleDioError(DioError error) {
           } else if (error.response?.statusCode == 403) {
             errorDescription = error.response?.data is String
                 ? "403 Forbidden"
-                : error.response?.data['fault']['faultstring'] ?? "Unknown Error";
+                : error.response?.data['fault']['faultstring'] ??
+                    "Unknown Error";
           } else if (error.response?.statusCode == 404) {
             errorDescription = error.response?.data is String
                 ? "404 Unknown Error"
-                : error.response?.data['fault']['faultstring'] ?? "Unknown Error";
+                : error.response?.data['fault']['faultstring'] ??
+                    "Unknown Error";
           } else if (error.response?.statusCode == 409) {
             errorDescription = error.response?.data['fault']['faultstring'] +
                     ",\n Minutes left to join: " +

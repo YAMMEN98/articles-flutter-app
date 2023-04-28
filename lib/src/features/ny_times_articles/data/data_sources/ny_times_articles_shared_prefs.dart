@@ -5,8 +5,6 @@ class NyTimesArticlesSharedPrefs {
 
   NyTimesArticlesSharedPrefs(this._preferences);
 
-
-
   /// __________ Clear Storage __________ ///
   Future<bool> clearAllLocalData() async {
     return true;

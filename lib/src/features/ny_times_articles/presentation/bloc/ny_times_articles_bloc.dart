@@ -6,10 +6,10 @@ import 'package:ny_times_app/src/features/ny_times_articles/data/entities/ny_tim
 import 'package:ny_times_app/src/features/ny_times_articles/domain/usecases/ny_times_articles_usecase.dart';
 
 part 'ny_times_articles_event.dart';
-
 part 'ny_times_articles_state.dart';
 
-class NyTimesArticlesBloc extends Bloc<NyTimesArticlesEvent, NyTimesArticlesState> {
+class NyTimesArticlesBloc
+    extends Bloc<NyTimesArticlesEvent, NyTimesArticlesState> {
   late NyTimesArticlesUseCase nyTimesUseCase;
 
   // List of ny times articles
@@ -23,8 +23,8 @@ class NyTimesArticlesBloc extends Bloc<NyTimesArticlesEvent, NyTimesArticlesStat
   }
 
   // Getting ny times event
-  _onGettingNyTimesEvent(
-      OnGettingNyTimesArticlesEvent event, Emitter<NyTimesArticlesState> emitter) async {
+  _onGettingNyTimesEvent(OnGettingNyTimesArticlesEvent event,
+      Emitter<NyTimesArticlesState> emitter) async {
     if (event.withLoading) {
       emitter(LoadingGetNyTimesArticlesState());
     }
@@ -48,8 +48,8 @@ class NyTimesArticlesBloc extends Bloc<NyTimesArticlesEvent, NyTimesArticlesStat
   }
 
   // Searching event
-  _onSearchingEvent(
-      OnSearchingArticlesEvent event, Emitter<NyTimesArticlesState> emitter) async {
+  _onSearchingEvent(OnSearchingArticlesEvent event,
+      Emitter<NyTimesArticlesState> emitter) async {
     emitter(
       SearchingState(
         _runFilter(event.text),

@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ny_times_app/src/core/common_feature/presentation/widgets/cached_image_widget.dart';
@@ -36,7 +35,8 @@ class _ArticleCardWidgetState extends State<ArticleCardWidget> {
         widget.nyTimesModel.media!.isNotEmpty) {
       if (widget.nyTimesModel.media!.first.mediaMetadata != null &&
           widget.nyTimesModel.media!.first.mediaMetadata!.isNotEmpty) {
-        smallImageUrl = widget.nyTimesModel.media!.first.mediaMetadata!.first.url;
+        smallImageUrl =
+            widget.nyTimesModel.media!.first.mediaMetadata!.first.url;
       }
     }
 
@@ -163,13 +163,11 @@ class _ArticleCardWidgetState extends State<ArticleCardWidget> {
             padding: EdgeInsets.zero,
             constraints: BoxConstraints(),
             onPressed: () {
-
               Navigator.pushNamed(
                 context,
                 "/ny_times_article_details_page",
                 arguments: widget.nyTimesModel,
               );
-
             },
             icon: Icon(
               Icons.arrow_forward_ios_rounded,

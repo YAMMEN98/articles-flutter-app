@@ -1,4 +1,3 @@
-
 import 'package:ny_times_app/src/features/ny_times_articles/data/entities/ny_times_article_response_model.dart';
 import 'package:ny_times_app/src/features/ny_times_articles/data/entities/ny_times_articles_model.dart';
 

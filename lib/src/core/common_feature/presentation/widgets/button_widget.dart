@@ -1,5 +1,5 @@
-import 'package:ny_times_app/src/core/styles/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:ny_times_app/src/core/styles/app_colors.dart';
 
 class ButtonWidget extends StatefulWidget {
   final String text;

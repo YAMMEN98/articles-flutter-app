@@ -1,7 +1,8 @@
-import 'package:ny_times_app/src/core/styles/app_text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:ny_times_app/src/core/styles/app_text_style.dart';
+
 // import 'package:google_fonts/google_fonts.dart';
 
 import 'app_colors.dart';
@@ -10,7 +11,6 @@ import 'app_colors.dart';
 final ThemeData appTheme = ThemeData(
   dialogBackgroundColor: AppColors.lightGray,
   cardColor: AppColors.primaryColor,
-
   appBarTheme: AppBarTheme(
     // shadowColor: AppColors.lightGray,
     color: AppColors.white,
@@ -23,7 +23,6 @@ final ThemeData appTheme = ThemeData(
     ).titleLarge,
     systemOverlayStyle: SystemUiOverlayStyle.light,
   ),
-  // fontFamily: GoogleFonts.chakraPetch().fontFamily,
   fontFamily: "Georgia",
   scaffoldBackgroundColor: AppColors.white,
   iconTheme: const IconThemeData(color: AppColors.black, size: 25),
@@ -52,7 +51,6 @@ final ThemeData appTheme = ThemeData(
         horizontal: 10.sp,
       ),
       suffixIconColor: AppColors.black,
-
       border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10.sp),
           borderSide: const BorderSide(color: AppColors.white, width: 1)),
@@ -81,10 +79,8 @@ final ThemeData darkAppTheme = ThemeData(
     ).titleLarge,
     systemOverlayStyle: SystemUiOverlayStyle.light,
   ),
-  // fontFamily: GoogleFonts.chakraPetch().fontFamily,
   fontFamily: "Georgia",
   scaffoldBackgroundColor: AppColors.primaryColor,
-
   iconTheme: const IconThemeData(color: AppColors.white, size: 25),
   textTheme: const TextTheme(
     headlineLarge: AppTextStyle.xxxLargeWhite,
