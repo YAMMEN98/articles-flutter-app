@@ -13,10 +13,9 @@ Articles, display article details, and see more about details from url.
 
 ## Installing
 
-x- Clone the repository ```git clone https://github.com/YAMMEN98/ny-times-flutter-app.git```
-
+- Clone the repository ```git clone https://github.com/YAMMEN98/ny-times-flutter-app.git```
 - Open the project in Android Studio or VS Code.
-    - Run the app on an emulator or physical device.
+- Run the app on an emulator or physical device.
 
 ## Feature
 
@@ -26,8 +25,11 @@ x- Clone the repository ```git clone https://github.com/YAMMEN98/ny-times-flutte
 - Display article details.
 - Apply Dark/Light theme.
 - Apply localization en/ar languages.
-- Create a lane to generate apk when upload code to main branch.
-- Unit Test.
+- Create a lane to generate apk automatically when upload code to the main branch.
+
+![Text Coverage](https://github.com/YAMMEN98/ny-times-flutter-app/blob/main/actions.png)
+
+- Apply Unit Testing .
 
 ## Built With
 
