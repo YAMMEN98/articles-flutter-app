@@ -34,11 +34,16 @@ x- Clone the repository ```git clone https://github.com/YAMMEN98/ny-times-flutte
   - run command ```flutter test```
   - If you want to get coverage file from Unit Test run this.command ```flutter test --coverage```
   
-  To generate coverage report follow these steps:
+  There is many tools to generate text coverage,
+  we will use [test_cov_console](https://pub.dev/packages/test_cov_console) to generate coverage report, follow these steps to run it:
 - Run the following command to make sure all flutter library is up-to-date ```flutter pub get```,
   - Run the following command to generate lcov.info on coverage directory ```flutter test --coverage```,
-  - Run the tool to generate report from lcov.info ```flutter pub run test_cov_console```,
+  - Run the tool to generate report from lcov.info to the console ```flutter pub run test_cov_console```,
   - You can follow and see more of parameters in [test_cov_console](https://pub.dev/packages/test_cov_console).
-  - Output to CSV  file (-c, --csv, -o, --output) by ```flutter pub run test_cov_console -c --output=coverage/test_coverage.csv```
+  - You Can Output report to CSV file (-c, --csv, -o, --output) by ```flutter pub run test_cov_console -c --output=coverage/test_coverage.csv```
+  - Open CSV file by excel and you will see like this result:
+  
+    ![Text Coverage](https://github.com/YAMMEN98/ny-times-flutter-app/blob/main/test_coverage.png)
+
 ## Author
   Yamen Abdullrahman - Senior Flutter Developer;
