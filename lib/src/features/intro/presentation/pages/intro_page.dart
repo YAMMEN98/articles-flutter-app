@@ -18,7 +18,7 @@ class _IntroPageState extends State<IntroPage> {
         seconds: 1,
       ),
       () {
-        Navigator.pushNamed(context, "/ny_times_articles_page");
+        Navigator.pushNamedAndRemoveUntil(context, "/ny_times_articles_page");
       },
     );
     super.initState();
