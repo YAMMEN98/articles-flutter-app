@@ -2,9 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ny_times_app/src/core/common_feature/presentation/pages/photo_view_page.dart';
 import 'package:ny_times_app/src/core/common_feature/presentation/pages/web_view_page.dart';
-import 'package:ny_times_app/src/features/ny_times_articles/data/entities/ny_times_articles_model.dart';
-import 'package:ny_times_app/src/features/ny_times_articles/presentation/pages/ny_times_article_details_page.dart';
-import 'package:ny_times_app/src/features/ny_times_articles/presentation/pages/ny_times_articles_page.dart';
+import 'package:ny_times_app/src/features/articles/data/entities/article_model.dart';
+import 'package:ny_times_app/src/features/articles/presentation/pages/ny_times_article_details_page.dart';
+import 'package:ny_times_app/src/features/articles/presentation/pages/ny_times_articles_page.dart';
 
 class AppRouter {
   static String currentRoute = "/";
@@ -27,7 +27,7 @@ class AppRouter {
             assert(
                 settings.arguments != null, "nyTimesArticleModel is required");
             return NyTimesArticleDetailsPage(
-              model: settings.arguments as NyTimesArticlesModel,
+              model: settings.arguments as ArticleModel,
             );
           },
         );

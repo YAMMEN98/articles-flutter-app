@@ -5,6 +5,6 @@ String getApiKeyPath() {
   return "?api-key=$apiKey";
 }
 
-String getNyTimeArticle(int period) {
+String getArticlePath(int period) {
   return "all-sections/${period.toString()}.json${getApiKeyPath()}";
 }
