@@ -1,56 +1,54 @@
 import 'package:bloc/bloc.dart';
 import 'package:ny_times_app/src/core/network/error/failures.dart';
 import 'package:ny_times_app/src/core/util/constant/app_constants.dart';
-import 'package:ny_times_app/src/core/util/injections.dart';
 import 'package:ny_times_app/src/features/articles/domain/models/article_model.dart';
 import 'package:ny_times_app/src/features/articles/domain/models/articles_params.dart';
 import 'package:ny_times_app/src/features/articles/domain/usecases/articles_usecase.dart';
 
-part 'ny_times_articles_event.dart';
-part 'ny_times_articles_state.dart';
+part 'articles_event.dart';
 
-class NyTimesArticlesBloc
-    extends Bloc<NyTimesArticlesEvent, NyTimesArticlesState> {
-  late ArticlesUseCase nyTimesUseCase;
+part 'articles_state.dart';
 
-  // List of ny times articles
+class ArticlesBloc extends Bloc<ArticlesEvent, ArticlesState> {
+  final ArticlesUseCase articlesUseCase;
+
+  // List of articles
   List<ArticleModel> allArticles = [];
 
-  NyTimesArticlesBloc() : super(LoadingGetNyTimesArticlesState()) {
-    nyTimesUseCase = sl<ArticlesUseCase>();
-
-    on<OnGettingNyTimesArticlesEvent>(_onGettingNyTimesEvent);
+  ArticlesBloc({required this.articlesUseCase})
+      : super(LoadingGetArticlesState()) {
+    on<OnGettingArticlesEvent>(_onGettingArticlesEvent);
     on<OnSearchingArticlesEvent>(_onSearchingEvent);
   }
 
-  // Getting ny times event
-  _onGettingNyTimesEvent(OnGettingNyTimesArticlesEvent event,
-      Emitter<NyTimesArticlesState> emitter) async {
+// Getting articles event
+  _onGettingArticlesEvent(
+      OnGettingArticlesEvent event, Emitter<ArticlesState> emitter) async {
     if (event.withLoading) {
-      emitter(LoadingGetNyTimesArticlesState());
+      emitter(LoadingGetArticlesState());
     }
 
-    final result = await nyTimesUseCase.call(
+    final result = await articlesUseCase.call(
       ArticlesParams(
         period: event.period,
       ),
     );
     result.fold((l) {
       if (l is CancelTokenFailure) {
-        emitter(LoadingGetNyTimesArticlesState());
+        emitter(LoadingGetArticlesState());
       } else {
-        emitter(ErrorGetNyTimesArticlesState(l.errorMessage));
+        emitter(ErrorGetArticlesState(l.errorMessage));
       }
     }, (r) {
       // Return list of articles with filtered by search text
       allArticles = r;
-      emitter(SuccessGetNyTimesArticlesState(_runFilter(event.text)));
+      emitter(SuccessGetArticlesState(_runFilter(event.text)));
     });
   }
 
   // Searching event
-  _onSearchingEvent(OnSearchingArticlesEvent event,
-      Emitter<NyTimesArticlesState> emitter) async {
+  _onSearchingEvent(
+      OnSearchingArticlesEvent event, Emitter<ArticlesState> emitter) async {
     emitter(
       SearchingState(
         _runFilter(event.text),

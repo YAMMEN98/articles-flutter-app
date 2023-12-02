@@ -8,8 +8,10 @@ import 'package:ny_times_app/src/core/common_feature/presentation/widgets/reload
 import 'package:ny_times_app/src/core/common_feature/presentation/widgets/text_field_widget.dart';
 import 'package:ny_times_app/src/core/translations/l10n.dart';
 import 'package:ny_times_app/src/core/util/helper.dart';
+import 'package:ny_times_app/src/core/util/injections.dart';
 import 'package:ny_times_app/src/features/articles/domain/models/article_model.dart';
-import 'package:ny_times_app/src/features/articles/presentation/bloc/ny_times_articles_bloc.dart';
+import 'package:ny_times_app/src/features/articles/domain/usecases/articles_usecase.dart';
+import 'package:ny_times_app/src/features/articles/presentation/bloc/articles_bloc.dart';
 import 'package:ny_times_app/src/features/articles/presentation/widgets/article_card_widget.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
@@ -21,7 +23,9 @@ class NyTimesArticlesPage extends StatefulWidget {
 }
 
 class _NyTimesArticlesPageState extends State<NyTimesArticlesPage> {
-  NyTimesArticlesBloc _bloc = NyTimesArticlesBloc();
+  ArticlesBloc _bloc = ArticlesBloc(
+    articlesUseCase: sl<ArticlesUseCase>()
+  );
 
   // Key for scaffold to open drawer
   GlobalKey<ScaffoldState> _key = GlobalKey();
@@ -230,24 +234,24 @@ class _NyTimesArticlesPageState extends State<NyTimesArticlesPage> {
 
           // List of articles
           Expanded(
-            child: BlocConsumer<NyTimesArticlesBloc, NyTimesArticlesState>(
+            child: BlocConsumer<ArticlesBloc, ArticlesState>(
               bloc: _bloc,
               listener: (context, state) {
-                if (state is SuccessGetNyTimesArticlesState) {
+                if (state is SuccessGetArticlesState) {
                   nyTimesArticles.clear();
-                  nyTimesArticles = List.from(state.nyTimesArticles);
+                  nyTimesArticles = List.from(state.articles);
                   _refreshController.refreshCompleted(
                     resetFooterState: true,
                   );
                 } else if (state is SearchingState) {
                   nyTimesArticles.clear();
-                  nyTimesArticles = state.nyTimesArticles;
+                  nyTimesArticles = state.articles;
                 }
               },
               builder: (context, state) {
-                if (state is LoadingGetNyTimesArticlesState) {
+                if (state is LoadingGetArticlesState) {
                   return const AppLoader();
-                } else if (state is ErrorGetNyTimesArticlesState) {
+                } else if (state is ErrorGetArticlesState) {
                   return ReloadWidget.error(
                     content: state.errorMsg,
                     onPressed: () {
@@ -295,7 +299,7 @@ class _NyTimesArticlesPageState extends State<NyTimesArticlesPage> {
   // Call articles
   callArticles({bool withLoading = true}) {
     _bloc.add(
-      OnGettingNyTimesArticlesEvent(
+      OnGettingArticlesEvent(
         _searchController.text.trim(),
         selectedPeriod,
         withLoading: withLoading,
