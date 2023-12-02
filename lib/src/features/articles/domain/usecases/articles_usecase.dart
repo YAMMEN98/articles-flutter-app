@@ -1,11 +1,10 @@
 import 'package:dartz/dartz.dart';
 import 'package:ny_times_app/src/core/network/error/failures.dart';
 import 'package:ny_times_app/src/core/util/usecases/usecase.dart';
-import 'package:ny_times_app/src/features/articles/data/entities/article_model.dart';
+import 'package:ny_times_app/src/features/articles/domain/entities/article_model.dart';
 import 'package:ny_times_app/src/features/articles/domain/repositories/abstract_articles_repository.dart';
 
-class ArticlesUseCase
-    extends UseCase<List<ArticleModel>, ArticlesParams> {
+class ArticlesUseCase extends UseCase<List<ArticleModel>, ArticlesParams> {
   final AbstractArticlesRepository repository;
 
   ArticlesUseCase(this.repository);
@@ -22,6 +21,7 @@ class ArticlesUseCase
   }
 }
 
+// Required params for this use-case
 class ArticlesParams {
   ArticlesParams({
     required this.period,

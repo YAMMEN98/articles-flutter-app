@@ -2,7 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:ny_times_app/src/core/network/error/exceptions.dart';
 import 'package:ny_times_app/src/core/network/error/failures.dart';
 import 'package:ny_times_app/src/features/articles/data/data_sources/articles_impl_api.dart';
-import 'package:ny_times_app/src/features/articles/data/entities/article_model.dart';
+import 'package:ny_times_app/src/features/articles/domain/entities/article_model.dart';
 import 'package:ny_times_app/src/features/articles/domain/repositories/abstract_articles_repository.dart';
 import 'package:ny_times_app/src/features/articles/domain/usecases/articles_usecase.dart';
 

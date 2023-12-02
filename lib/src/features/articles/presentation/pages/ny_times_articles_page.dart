@@ -8,7 +8,7 @@ import 'package:ny_times_app/src/core/common_feature/presentation/widgets/reload
 import 'package:ny_times_app/src/core/common_feature/presentation/widgets/text_field_widget.dart';
 import 'package:ny_times_app/src/core/translations/l10n.dart';
 import 'package:ny_times_app/src/core/util/helper.dart';
-import 'package:ny_times_app/src/features/articles/data/entities/article_model.dart';
+import 'package:ny_times_app/src/features/articles/domain/entities/article_model.dart';
 import 'package:ny_times_app/src/features/articles/presentation/bloc/ny_times_articles_bloc.dart';
 import 'package:ny_times_app/src/features/articles/presentation/widgets/article_card_widget.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
