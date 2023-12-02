@@ -3,14 +3,14 @@ import 'package:ny_times_app/src/core/network/error/exceptions.dart';
 import 'package:ny_times_app/src/core/network/error/failures.dart';
 import 'package:ny_times_app/src/features/articles/data/data_sources/articles_impl_api.dart';
 import 'package:ny_times_app/src/features/articles/data/entities/article_model.dart';
-import 'package:ny_times_app/src/features/articles/domain/repositories/ny_times_articles_repository.dart';
+import 'package:ny_times_app/src/features/articles/domain/repositories/abstract_articles_repository.dart';
 import 'package:ny_times_app/src/features/articles/domain/usecases/ny_times_articles_usecase.dart';
 
-class NyTimesArticlesRepositoryImpl extends NyTimesArticlesRepository {
-  final ArticlesImplApi nyTimesApi;
+class ArticlesRepositoryImpl extends AbstractArticlesRepository {
+  final ArticlesImplApi articlesApi;
 
-  NyTimesArticlesRepositoryImpl(
-    this.nyTimesApi,
+  ArticlesRepositoryImpl(
+    this.articlesApi,
   );
 
   // Gent Ny Times Articles
@@ -18,7 +18,7 @@ class NyTimesArticlesRepositoryImpl extends NyTimesArticlesRepository {
   Future<Either<Failure, List<ArticleModel>>> getNyTimesArticles(
       NyTimesArticlesParams params) async {
     try {
-      final result = await nyTimesApi.getArticles(params);
+      final result = await articlesApi.getArticles(params);
       return Right(result.results ?? []);
     } on ServerException catch (e) {
       return Left(ServerFailure(e.message, e.statusCode));
