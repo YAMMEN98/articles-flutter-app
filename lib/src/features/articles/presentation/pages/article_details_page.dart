@@ -10,17 +10,17 @@ import 'package:ny_times_app/src/core/util/constant/app_constants.dart';
 import 'package:ny_times_app/src/core/util/helper.dart';
 import 'package:ny_times_app/src/features/articles/domain/models/article_model.dart';
 
-class NyTimesArticleDetailsPage extends StatefulWidget {
+class ArticleDetailsPage extends StatefulWidget {
   final ArticleModel model;
 
-  const NyTimesArticleDetailsPage({Key? key, required this.model})
+  const ArticleDetailsPage({Key? key, required this.model})
       : super(key: key);
 
   @override
-  State<NyTimesArticleDetailsPage> createState() => _NyTimesArticlesPageState();
+  State<ArticleDetailsPage> createState() => _NyTimesArticlesPageState();
 }
 
-class _NyTimesArticlesPageState extends State<NyTimesArticleDetailsPage> {
+class _NyTimesArticlesPageState extends State<ArticleDetailsPage> {
   String? imageUrl;
   String? imageCaption;
 

@@ -92,11 +92,11 @@ dependencies:
   # Photo view to view image and control it
   photo_view: ^0.14.0
 
-  # Mock classes
-  mockito: ^5.4.3
-
-  # Generate CSV file and get coverage report
-  test_cov_console: ^0.2.2
+#  # Mock classes
+#  mockito: ^5.4.3
+#
+#  # Generate CSV file and get coverage report
+#  test_cov_console: ^0.2.2
 
 dev_dependencies:
   flutter_test:
