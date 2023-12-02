@@ -3,8 +3,8 @@ import 'package:ny_times_app/src/core/network/error/dio_error_handler.dart';
 import 'package:ny_times_app/src/core/network/error/exceptions.dart';
 import 'package:ny_times_app/src/core/util/constant/network_constant.dart';
 import 'package:ny_times_app/src/features/articles/data/data_sources/abstract_article_api.dart';
-import 'package:ny_times_app/src/features/articles/domain/entities/ny_times_article_response_model.dart';
-import 'package:ny_times_app/src/features/articles/domain/entities/article_model.dart';
+import 'package:ny_times_app/src/features/articles/domain/models/ny_times_article_response_model.dart';
+import 'package:ny_times_app/src/features/articles/domain/models/article_model.dart';
 import 'package:ny_times_app/src/features/articles/domain/usecases/articles_usecase.dart';
 
 class ArticlesImplApi extends AbstractArticleApi {

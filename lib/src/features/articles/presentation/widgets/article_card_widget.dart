@@ -4,7 +4,7 @@ import 'package:ny_times_app/src/core/common_feature/presentation/widgets/cached
 import 'package:ny_times_app/src/core/styles/app_colors.dart';
 import 'package:ny_times_app/src/core/util/constant/app_constants.dart';
 import 'package:ny_times_app/src/core/util/helper.dart';
-import 'package:ny_times_app/src/features/articles/domain/entities/article_model.dart';
+import 'package:ny_times_app/src/features/articles/domain/models/article_model.dart';
 
 class ArticleCardWidget extends StatefulWidget {
   final ArticleModel nyTimesModel;
