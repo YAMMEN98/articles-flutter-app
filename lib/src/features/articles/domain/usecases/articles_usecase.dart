@@ -4,16 +4,16 @@ import 'package:ny_times_app/src/core/util/usecases/usecase.dart';
 import 'package:ny_times_app/src/features/articles/data/entities/article_model.dart';
 import 'package:ny_times_app/src/features/articles/domain/repositories/abstract_articles_repository.dart';
 
-class NyTimesArticlesUseCase
-    extends UseCase<List<ArticleModel>, NyTimesArticlesParams> {
+class ArticlesUseCase
+    extends UseCase<List<ArticleModel>, ArticlesParams> {
   final AbstractArticlesRepository repository;
 
-  NyTimesArticlesUseCase(this.repository);
+  ArticlesUseCase(this.repository);
 
   @override
   Future<Either<Failure, List<ArticleModel>>> call(
-      NyTimesArticlesParams params) async {
-    final result = await repository.getNyTimesArticles(params);
+      ArticlesParams params) async {
+    final result = await repository.getArticles(params);
     return result.fold((l) {
       return Left(l);
     }, (r) async {
@@ -22,14 +22,14 @@ class NyTimesArticlesUseCase
   }
 }
 
-class NyTimesArticlesParams {
-  NyTimesArticlesParams({
+class ArticlesParams {
+  ArticlesParams({
     required this.period,
   });
 
   late final int period;
 
-  NyTimesArticlesParams.fromJson(Map<String, dynamic> json) {
+  ArticlesParams.fromJson(Map<String, dynamic> json) {
     period = json['period'];
   }
 

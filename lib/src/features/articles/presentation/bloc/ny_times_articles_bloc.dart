@@ -3,20 +3,20 @@ import 'package:ny_times_app/src/core/network/error/failures.dart';
 import 'package:ny_times_app/src/core/util/constant/app_constants.dart';
 import 'package:ny_times_app/src/core/util/injections.dart';
 import 'package:ny_times_app/src/features/articles/data/entities/article_model.dart';
-import 'package:ny_times_app/src/features/articles/domain/usecases/ny_times_articles_usecase.dart';
+import 'package:ny_times_app/src/features/articles/domain/usecases/articles_usecase.dart';
 
 part 'ny_times_articles_event.dart';
 part 'ny_times_articles_state.dart';
 
 class NyTimesArticlesBloc
     extends Bloc<NyTimesArticlesEvent, NyTimesArticlesState> {
-  late NyTimesArticlesUseCase nyTimesUseCase;
+  late ArticlesUseCase nyTimesUseCase;
 
   // List of ny times articles
   List<ArticleModel> allArticles = [];
 
   NyTimesArticlesBloc() : super(LoadingGetNyTimesArticlesState()) {
-    nyTimesUseCase = sl<NyTimesArticlesUseCase>();
+    nyTimesUseCase = sl<ArticlesUseCase>();
 
     on<OnGettingNyTimesArticlesEvent>(_onGettingNyTimesEvent);
     on<OnSearchingArticlesEvent>(_onSearchingEvent);
@@ -30,7 +30,7 @@ class NyTimesArticlesBloc
     }
 
     final result = await nyTimesUseCase.call(
-      NyTimesArticlesParams(
+      ArticlesParams(
         period: event.period,
       ),
     );

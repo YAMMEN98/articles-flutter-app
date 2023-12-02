@@ -5,15 +5,15 @@ import 'package:ny_times_app/src/features/articles/data/data_sources/articles_im
 import 'data/data_sources/articles_shared_prefs.dart';
 import 'data/repositories/articles_repo_impl.dart';
 import 'domain/repositories/abstract_articles_repository.dart';
-import 'domain/usecases/ny_times_articles_usecase.dart';
+import 'domain/usecases/articles_usecase.dart';
 
 initNyTimesArticlesInjections() {
   sl.registerFactory<ArticlesImplApi>(
       () => ArticlesImplApi(DioNetwork.appAPI));
   sl.registerFactory<ArticlesSharedPrefs>(
       () => ArticlesSharedPrefs(sl()));
-  sl.registerFactory<NyTimesArticlesUseCase>(
-      () => NyTimesArticlesUseCase(sl()));
+  sl.registerFactory<ArticlesUseCase>(
+      () => ArticlesUseCase(sl()));
   sl.registerFactory<AbstractArticlesRepository>(
       () => ArticlesRepositoryImpl(sl()));
 }

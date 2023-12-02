@@ -5,7 +5,7 @@ import 'package:ny_times_app/src/core/util/constant/network_constant.dart';
 import 'package:ny_times_app/src/features/articles/data/data_sources/abstract_article_api.dart';
 import 'package:ny_times_app/src/features/articles/data/entities/ny_times_article_response_model.dart';
 import 'package:ny_times_app/src/features/articles/data/entities/article_model.dart';
-import 'package:ny_times_app/src/features/articles/domain/usecases/ny_times_articles_usecase.dart';
+import 'package:ny_times_app/src/features/articles/domain/usecases/articles_usecase.dart';
 
 class ArticlesImplApi extends AbstractArticleApi {
   final Dio dio;
@@ -17,7 +17,7 @@ class ArticlesImplApi extends AbstractArticleApi {
   // Articles Method
   @override
   Future<ApiResponse<List<ArticleModel>>> getArticles(
-      NyTimesArticlesParams params) async {
+      ArticlesParams params) async {
     try {
       final result = (await dio.get(
         getArticlePath(params.period),
