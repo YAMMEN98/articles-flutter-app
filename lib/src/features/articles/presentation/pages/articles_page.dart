@@ -23,7 +23,9 @@ class ArticlesPage extends StatefulWidget {
 }
 
 class _ArticlesPageState extends State<ArticlesPage> {
-  ArticlesBloc _bloc = ArticlesBloc(articlesUseCase: sl<ArticlesUseCase>());
+  ArticlesBloc _bloc = ArticlesBloc(
+    articlesUseCase: sl<ArticlesUseCase>()
+  );
 
   // Key for scaffold to open drawer
   GlobalKey<ScaffoldState> _key = GlobalKey();
@@ -222,21 +224,6 @@ class _ArticlesPageState extends State<ArticlesPage> {
                   ];
                 },
               ),
-
-              ElevatedButton(
-                onPressed: () {
-                  ArticlesBloc bloc =
-                      ArticlesBloc(articlesUseCase: sl<ArticlesUseCase>());
-                  bloc.add(
-                    OnGettingArticlesEvent(
-                      "You",
-                      1,
-                      withLoading: false,
-                    ),
-                  );
-                },
-                child: Text("Call Articles"),
-              ),
             ],
           ),
 
@@ -303,7 +290,13 @@ class _ArticlesPageState extends State<ArticlesPage> {
     );
   }
 
-  // Call Article Api
+  // Refresh method called when pull down list
+  void _onRefresh() async {
+    _refreshController.requestRefresh();
+    callArticles(withLoading: false);
+  }
+
+  // Call articles
   callArticles({bool withLoading = true}) {
     _bloc.add(
       OnGettingArticlesEvent(
