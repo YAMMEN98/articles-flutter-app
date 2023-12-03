@@ -1,4 +1,4 @@
-import 'package:ny_times_app/src/core/shared/domain/entities/language_enum.dart';
+import 'package:ny_times_app/src/shared/domain/entities/language_enum.dart';
 import 'package:ny_times_app/src/core/utils/constant/local_storage_constants.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

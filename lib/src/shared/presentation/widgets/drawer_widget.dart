@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ny_times_app/main.dart';
-import 'package:ny_times_app/src/core/shared/data/data_sources/app_shared_prefs.dart';
-import 'package:ny_times_app/src/core/shared/domain/entities/language_enum.dart';
+import 'package:ny_times_app/src/shared/data/data_sources/app_shared_prefs.dart';
+import 'package:ny_times_app/src/shared/domain/entities/language_enum.dart';
 import 'package:ny_times_app/src/core/translations/l10n.dart';
 import 'package:ny_times_app/src/core/helper/helper.dart';
 import 'package:ny_times_app/src/core/utils/injections.dart';

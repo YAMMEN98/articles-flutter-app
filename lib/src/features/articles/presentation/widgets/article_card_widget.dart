@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:ny_times_app/src/core/shared/presentation/widgets/cached_image_widget.dart';
+import 'package:ny_times_app/src/shared/presentation/widgets/cached_image_widget.dart';
 import 'package:ny_times_app/src/core/router/app_route_enum.dart';
 import 'package:ny_times_app/src/core/styles/app_colors.dart';
 import 'package:ny_times_app/src/core/utils/constant/app_constants.dart';

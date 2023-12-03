@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ny_times_app/src/core/shared/presentation/pages/app_drawer_page.dart';
+import 'package:ny_times_app/src/shared/presentation/pages/app_drawer_page.dart';
 
 class BackgroundPage extends StatefulWidget {
   final Widget child;

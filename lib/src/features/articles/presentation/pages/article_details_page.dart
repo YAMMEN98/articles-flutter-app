@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:ny_times_app/src/core/shared/presentation/pages/background_page.dart';
-import 'package:ny_times_app/src/core/shared/presentation/widgets/arrow_back_button_widget.dart';
-import 'package:ny_times_app/src/core/shared/presentation/widgets/cached_image_widget.dart';
-import 'package:ny_times_app/src/core/shared/presentation/widgets/custom_app_bar_widget.dart';
+import 'package:ny_times_app/src/shared/presentation/pages/background_page.dart';
+import 'package:ny_times_app/src/shared/presentation/widgets/arrow_back_button_widget.dart';
+import 'package:ny_times_app/src/shared/presentation/widgets/cached_image_widget.dart';
+import 'package:ny_times_app/src/shared/presentation/widgets/custom_app_bar_widget.dart';
 import 'package:ny_times_app/src/core/router/app_route_enum.dart';
 import 'package:ny_times_app/src/core/styles/app_colors.dart';
 import 'package:ny_times_app/src/core/translations/l10n.dart';
