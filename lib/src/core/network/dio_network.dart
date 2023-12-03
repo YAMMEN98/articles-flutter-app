@@ -3,9 +3,9 @@ import 'dart:convert';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:ny_times_app/src/core/network/logger_interceptor.dart';
-import 'package:ny_times_app/src/core/util/constant/network_constant.dart';
-import 'package:ny_times_app/src/core/util/helper.dart';
-import 'package:ny_times_app/src/core/util/log/app_logger.dart';
+import 'package:ny_times_app/src/core/utils/constant/network_constant.dart';
+import 'package:ny_times_app/src/core/helper/helper.dart';
+import 'package:ny_times_app/src/core/utils/log/app_logger.dart';
 
 class DioNetwork {
   static late Dio appAPI;

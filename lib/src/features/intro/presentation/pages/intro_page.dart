@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:ny_times_app/src/core/helper/helper.dart';
+import 'package:ny_times_app/src/core/router/app_route_enum.dart';
 import 'package:ny_times_app/src/core/styles/app_colors.dart';
-import 'package:ny_times_app/src/core/util/helper.dart';
 
 class IntroPage extends StatefulWidget {
   const IntroPage({Key? key}) : super(key: key);
@@ -18,7 +19,11 @@ class _IntroPageState extends State<IntroPage> {
         seconds: 1,
       ),
       () {
-        Navigator.pushNamedAndRemoveUntil(context, "/ny_times_articles_page",(route) => false,);
+        Navigator.pushNamedAndRemoveUntil(
+          context,
+          AppRouteEnum.articlesPage.name,
+          (route) => false,
+        );
       },
     );
     super.initState();

@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:ny_times_app/src/core/util/helper.dart';
+import 'package:ny_times_app/src/core/helper/helper.dart';
 
 class CachedImageWidget extends StatelessWidget {
   final double? height;

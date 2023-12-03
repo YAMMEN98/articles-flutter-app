@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:ny_times_app/src/core/network/error/failures.dart';
-import 'package:ny_times_app/src/core/util/constant/app_constants.dart';
+import 'package:ny_times_app/src/core/utils/constant/app_constants.dart';
 import 'package:ny_times_app/src/features/articles/domain/models/article_model.dart';
 import 'package:ny_times_app/src/features/articles/domain/models/articles_params.dart';
 import 'package:ny_times_app/src/features/articles/domain/usecases/articles_usecase.dart';

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:ny_times_app/src/core/common_feature/presentation/widgets/cached_image_widget.dart';
+import 'package:ny_times_app/src/core/shared/presentation/widgets/cached_image_widget.dart';
+import 'package:ny_times_app/src/core/router/app_route_enum.dart';
 import 'package:ny_times_app/src/core/styles/app_colors.dart';
-import 'package:ny_times_app/src/core/util/constant/app_constants.dart';
-import 'package:ny_times_app/src/core/util/helper.dart';
+import 'package:ny_times_app/src/core/utils/constant/app_constants.dart';
+import 'package:ny_times_app/src/core/helper/helper.dart';
 import 'package:ny_times_app/src/features/articles/domain/models/article_model.dart';
 
 class ArticleCardWidget extends StatefulWidget {
@@ -64,7 +65,7 @@ class _ArticleCardWidgetState extends State<ArticleCardWidget> {
                 onTap: () {
                   Navigator.pushNamed(
                     context,
-                    "/photo_view_page",
+                    AppRouteEnum.photoViewPage.name,
                     arguments: {
                       "path": bigImageUrl!,
                       "fromNet": true,
@@ -165,7 +166,7 @@ class _ArticleCardWidgetState extends State<ArticleCardWidget> {
             onPressed: () {
               Navigator.pushNamed(
                 context,
-                "/ny_times_article_details_page",
+                AppRouteEnum.articleDetailsPage.name,
                 arguments: widget.nyTimesModel,
               );
             },

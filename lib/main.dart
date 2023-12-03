@@ -3,23 +3,25 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:ny_times_app/src/core/common_feature/data/data_sources/app_shared_prefs.dart';
+import 'package:ny_times_app/src/core/shared/data/data_sources/app_shared_prefs.dart';
+import 'package:ny_times_app/src/core/router/router.dart';
 import 'package:ny_times_app/src/core/styles/app_theme.dart';
 import 'package:ny_times_app/src/core/translations/l10n.dart';
-import 'package:ny_times_app/src/core/util/helper.dart';
-import 'package:ny_times_app/src/core/util/injections.dart';
-import 'package:ny_times_app/src/core/util/router.dart';
+import 'package:ny_times_app/src/core/helper/helper.dart';
+import 'package:ny_times_app/src/core/utils/injections.dart';
 import 'package:ny_times_app/src/features/intro/presentation/pages/intro_page.dart';
 import 'package:provider/provider.dart';
 
-import 'src/core/common_feature/domain/entities/language_enum.dart';
+import 'src/core/shared/domain/entities/language_enum.dart';
 
 final navigatorKey = GlobalKey<NavigatorState>();
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
+  // Inject all dependencies
   await initInjections();
+
   runApp(DevicePreview(
     builder: (context) {
       return const App();
@@ -48,7 +50,7 @@ class App extends StatefulWidget {
 
 class _AppState extends State<App> with WidgetsBindingObserver {
   Locale locale = const Locale("en");
-  final GlobalKey<ScaffoldMessengerState> snackbarKey =
+  final GlobalKey<ScaffoldMessengerState> snackBarKey =
       GlobalKey<ScaffoldMessengerState>();
 
   @override
@@ -83,9 +85,8 @@ class _AppState extends State<App> with WidgetsBindingObserver {
             splitScreenMode: true,
             builder: (context, child) {
               return MaterialApp(
-                useInheritedMediaQuery: false,
                 title: 'Ny Times Articles App',
-                scaffoldMessengerKey: snackbarKey,
+                scaffoldMessengerKey: snackBarKey,
                 onGenerateRoute: AppRouter.generateRoute,
                 theme: Helper.isDarkTheme() ? darkAppTheme : appTheme,
                 debugShowCheckedModeBanner: false,

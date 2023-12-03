@@ -1,27 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ny_times_app/main.dart';
-import 'package:ny_times_app/src/core/common_feature/data/data_sources/app_shared_prefs.dart';
-import 'package:ny_times_app/src/core/common_feature/domain/entities/language_enum.dart';
+import 'package:ny_times_app/src/core/shared/data/data_sources/app_shared_prefs.dart';
+import 'package:ny_times_app/src/core/shared/domain/entities/language_enum.dart';
 import 'package:ny_times_app/src/core/translations/l10n.dart';
-import 'package:ny_times_app/src/core/util/helper.dart';
-import 'package:ny_times_app/src/core/util/injections.dart';
+import 'package:ny_times_app/src/core/helper/helper.dart';
+import 'package:ny_times_app/src/core/utils/injections.dart';
 import 'package:provider/provider.dart';
 
-class DrawerWidget extends StatefulWidget {
-  const DrawerWidget({Key? key}) : super(key: key);
+class AppDrawerPage extends StatefulWidget {
+  const AppDrawerPage({Key? key}) : super(key: key);
 
   @override
-  State<DrawerWidget> createState() => _DrawerWidgetState();
+  State<AppDrawerPage> createState() => _AppDrawerPageState();
 }
 
-class _DrawerWidgetState extends State<DrawerWidget> {
+class _AppDrawerPageState extends State<AppDrawerPage> {
   LanguageEnum selectedLanguage = Helper.getLang();
 
   @override
   void initState() {
-    selectedLanguage = Helper.getLang();
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
   }
 
   @override

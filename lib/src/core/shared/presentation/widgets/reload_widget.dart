@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ny_times_app/src/core/styles/app_colors.dart';
-import 'package:ny_times_app/src/core/util/helper.dart';
+import 'package:ny_times_app/src/core/helper/helper.dart';
 
 class ReloadWidget extends StatelessWidget {
   final String content;

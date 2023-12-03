@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:ny_times_app/src/core/network/error/failures.dart';
-import 'package:ny_times_app/src/core/util/usecases/usecase.dart';
+import 'package:ny_times_app/src/core/utils/usecases/usecase.dart';
 import 'package:ny_times_app/src/features/articles/domain/models/article_model.dart';
 import 'package:ny_times_app/src/features/articles/domain/models/articles_params.dart';
 import 'package:ny_times_app/src/features/articles/domain/repositories/abstract_articles_repository.dart';

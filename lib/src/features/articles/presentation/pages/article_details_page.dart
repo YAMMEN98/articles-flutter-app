@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:ny_times_app/src/core/common_feature/presentation/pages/background_page.dart';
-import 'package:ny_times_app/src/core/common_feature/presentation/widgets/arrow_back_button_widget.dart';
-import 'package:ny_times_app/src/core/common_feature/presentation/widgets/cached_image_widget.dart';
-import 'package:ny_times_app/src/core/common_feature/presentation/widgets/custom_app_bar_widget.dart';
+import 'package:ny_times_app/src/core/shared/presentation/pages/background_page.dart';
+import 'package:ny_times_app/src/core/shared/presentation/widgets/arrow_back_button_widget.dart';
+import 'package:ny_times_app/src/core/shared/presentation/widgets/cached_image_widget.dart';
+import 'package:ny_times_app/src/core/shared/presentation/widgets/custom_app_bar_widget.dart';
+import 'package:ny_times_app/src/core/router/app_route_enum.dart';
 import 'package:ny_times_app/src/core/styles/app_colors.dart';
 import 'package:ny_times_app/src/core/translations/l10n.dart';
-import 'package:ny_times_app/src/core/util/constant/app_constants.dart';
-import 'package:ny_times_app/src/core/util/helper.dart';
+import 'package:ny_times_app/src/core/utils/constant/app_constants.dart';
+import 'package:ny_times_app/src/core/helper/helper.dart';
 import 'package:ny_times_app/src/features/articles/domain/models/article_model.dart';
 
 class ArticleDetailsPage extends StatefulWidget {
@@ -158,7 +159,7 @@ class _NyTimesArticlesPageState extends State<ArticleDetailsPage> {
                         // display image if it is available
                         Navigator.pushNamed(
                           context,
-                          "/photo_view_page",
+                          AppRouteEnum.photoViewPage.name,
                           arguments: {
                             "path": imageUrl!,
                             "fromNet": true,
@@ -243,7 +244,7 @@ class _NyTimesArticlesPageState extends State<ArticleDetailsPage> {
                             onTap: () {
                               Navigator.pushNamed(
                                 context,
-                                "/web_view_page",
+                                AppRouteEnum.weViewPage.name,
                                 arguments: widget.model.url,
                               );
                             },

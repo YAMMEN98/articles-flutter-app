@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:ny_times_app/src/core/network/error/exceptions.dart';
-import 'package:ny_times_app/src/core/util/constant/network_constant.dart';
+import 'package:ny_times_app/src/core/utils/constant/network_constant.dart';
 import 'package:ny_times_app/src/features/articles/data/data_sources/remote/abstract_article_api.dart';
 import 'package:ny_times_app/src/features/articles/data/data_sources/remote/articles_impl_api.dart';
 import 'package:ny_times_app/src/features/articles/domain/models/articles_params.dart';
