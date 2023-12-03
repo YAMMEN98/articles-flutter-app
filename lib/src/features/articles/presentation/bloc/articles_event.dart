@@ -4,7 +4,7 @@ abstract class ArticlesEvent {
   const ArticlesEvent();
 }
 
-// On getting Ny times Event
+// On Fetching Articles Event
 class OnGettingArticlesEvent extends ArticlesEvent {
   final String text;
   final int period;
@@ -14,7 +14,7 @@ class OnGettingArticlesEvent extends ArticlesEvent {
       {this.withLoading = true});
 }
 
-// On searching Event
+// On Searching Articles Event
 class OnSearchingArticlesEvent extends ArticlesEvent {
   final String text;
 

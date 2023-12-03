@@ -4,7 +4,7 @@ import 'package:ny_times_app/src/features/articles/domain/models/article_model.d
 import 'package:ny_times_app/src/features/articles/domain/usecases/articles_usecase.dart';
 
 abstract class AbstractArticleApi {
-  // Get all ny times article
+  // Get all article
   Future<ApiResponse<List<ArticleModel>>> getArticles(
       ArticlesParams params);
 }
