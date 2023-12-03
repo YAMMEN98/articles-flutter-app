@@ -11,7 +11,7 @@ final sl = GetIt.instance;
 Future<void> initInjections() async {
   await initSharedPrefsInjections();
   await initAppInjections();
-  await initCoreInjections();
+  await initDioInjections();
   await initArticlesInjections();
 }
 
@@ -22,7 +22,7 @@ initSharedPrefsInjections() async {
   await sl.isReady<SharedPreferences>();
 }
 
-Future<void> initCoreInjections() async {
+Future<void> initDioInjections() async {
   initRootLogger();
   DioNetwork.initDio();
 }
