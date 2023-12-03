@@ -12,7 +12,7 @@ Future<void> initInjections() async {
   await initSharedPrefsInjections();
   await initAppInjections();
   await initCoreInjections();
-  await initNyTimesArticlesInjections();
+  await initArticlesInjections();
 }
 
 initSharedPrefsInjections() async {

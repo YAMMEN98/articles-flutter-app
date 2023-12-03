@@ -7,13 +7,9 @@ import 'data/repositories/articles_repo_impl.dart';
 import 'domain/repositories/abstract_articles_repository.dart';
 import 'domain/usecases/articles_usecase.dart';
 
-initNyTimesArticlesInjections() {
-  sl.registerFactory<ArticlesImplApi>(
-      () => ArticlesImplApi(DioNetwork.appAPI));
-  sl.registerFactory<ArticlesSharedPrefs>(
-      () => ArticlesSharedPrefs(sl()));
-  sl.registerFactory<ArticlesUseCase>(
-      () => ArticlesUseCase(sl()));
-  sl.registerFactory<AbstractArticlesRepository>(
-      () => ArticlesRepositoryImpl(sl()));
+initArticlesInjections() {
+  sl.registerSingleton(ArticlesImplApi(DioNetwork.appAPI));
+  sl.registerSingleton(ArticlesSharedPrefs(sl()));
+  sl.registerSingleton(ArticlesUseCase(sl()));
+  sl.registerSingleton(ArticlesRepositoryImpl(sl()));
 }
