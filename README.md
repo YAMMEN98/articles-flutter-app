@@ -1,4 +1,11 @@
-# ny_times_app
+# Articles App
+
+# Medium Articles
+[Clean Architecture in Flutter](https://medium.com/@yamen.abd98/clean-architecture-in-flutter-mvvm-bloc-dio-79b1615530e1)
+
+[Unit Testing with Clean Architecture in Flutter | Mockito](https://medium.com/@yamen.abd98/unit-testing-in-flutter-with-clean-architecture-49d403645b4d)
+
+
 
 A new Flutter project with Clean Architecture to fetch thw New Work Time
 Articles, display article details, and see more about details from url.
