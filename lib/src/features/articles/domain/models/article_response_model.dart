@@ -31,10 +31,7 @@ class ApiResponse<T> {
       return false;
     }
     if (other is ApiResponse) {
-      return other.status == status &&
-              other.copyright == copyright &&
-              other.numResults == numResults &&
-              other.results is List
+      return other.results is List
           ? listEquals(other.results, results as List)
           : other.results == results;
     }

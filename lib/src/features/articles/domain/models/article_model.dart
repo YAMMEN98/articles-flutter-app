@@ -62,4 +62,21 @@ class ArticleModel {
     return json?.map((e) => ArticleModel.fromJson(e)).toList() ?? [];
   }
 
+
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) {
+      return true;
+    }
+    if (other.runtimeType != runtimeType) {
+      return false;
+    }
+    if (other is ArticleModel) {
+      return other.id == id;
+    }
+
+    return false;
+  }
+
 }
