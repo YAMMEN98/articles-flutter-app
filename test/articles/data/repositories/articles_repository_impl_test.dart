@@ -19,7 +19,7 @@ void main() {
   late MockArticlesImplApi mockApi;
 
   // Our Repository class that we need to test it.
-  // The dependency for this class will get from mocked ArticlesImplApi class not from
+  // The dependency for this class will get from the mocked ArticlesImplApi class not from
   // real ArticlesImplApi class
   late AbstractArticlesRepository articlesRepositoryImpl;
   setUp(() {

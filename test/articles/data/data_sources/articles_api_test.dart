@@ -7,9 +7,10 @@ import 'package:ny_times_app/src/core/utils/constant/network_constant.dart';
 import 'package:ny_times_app/src/features/articles/data/data_sources/remote/abstract_article_api.dart';
 import 'package:ny_times_app/src/features/articles/data/data_sources/remote/articles_impl_api.dart';
 import 'package:ny_times_app/src/features/articles/domain/models/articles_params.dart';
+
 import 'articles_api_test.mocks.dart';
-import 'mock_data/expected_article_data.dart';
 import 'mock_data/actual_article_json.dart';
+import 'mock_data/expected_article_data.dart';
 
 @GenerateMocks([Dio])
 void main() {
@@ -20,7 +21,7 @@ void main() {
   late MockDio mockDio;
 
   // Our Api class that we need to test it.
-  // The dependency for this class will get from mocked Dio class not from
+  // The dependency for this class will be from the mocked Dio class not from
   // real Dio class
   late AbstractArticleApi articlesApi;
   setUp(() {

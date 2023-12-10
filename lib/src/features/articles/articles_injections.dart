@@ -8,8 +8,8 @@ import 'data/repositories/articles_repo_impl.dart';
 import 'domain/usecases/articles_usecase.dart';
 
 initArticlesInjections() {
-  sl.registerSingleton<AbstractArticleApi>(ArticlesImplApi(DioNetwork.appAPI));
-  sl.registerSingleton<ArticlesSharedPrefs>(ArticlesSharedPrefs(sl()));
+  sl.registerSingleton<ArticlesImplApi>(ArticlesImplApi(DioNetwork.appAPI));
   sl.registerSingleton<AbstractArticlesRepository>(ArticlesRepositoryImpl(sl()));
+  sl.registerSingleton<ArticlesSharedPrefs>(ArticlesSharedPrefs(sl()));
   sl.registerSingleton<ArticlesUseCase>(ArticlesUseCase(sl()));
 }
